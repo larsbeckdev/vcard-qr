@@ -6,7 +6,7 @@ footer {
   z-index: 50;
   width: 100%;
   background: var(--color-background-footer);
-  border-top: 1px solid var(--color-border);
+  /* border-top: 1px solid var(--color-border); */
   font-size: 0.775rem;
 }
 
