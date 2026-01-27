@@ -1,0 +1,36 @@
+/* =========================
+   Button (Default)
+========================= */
+button,
+.button {
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  background: var(--color-primary);
+  /* color: var(--color-primary-foreground); */
+
+  transition: background-color 0.2s ease, transform 0.06s ease,
+    outline 0.2s ease;
+}
+
+button:hover,
+.button:hover {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+button:active,
+.button:active {
+  transform: translateY(1px);
+}
+
+.button--secondary {
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  border-color: var(--color-border);
+}

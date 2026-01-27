@@ -1,0 +1,155 @@
+/* =========================
+   Theme Variables
+========================= */
+:root {
+  /* Font */
+  --font-body: "Geist Variable", sans-serif;
+  --font-heading: "Geist Variable", sans-serif;
+
+  /* Layout */
+  --padding: 1rem;
+  --max-width-layout: 1440px;
+  --max-width-container: 1440px;
+
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+   /* =========================
+   * Alias-Variablen (deine vorhandene Struktur)
+   * ========================= */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-background-header: var(--background-header);
+  --color-background-footer: var(--background-footer);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-button: var(--button);
+  --color-button-foreground: var(--button-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --comments-background: var(--comments-background);
+  --comments-foreground: var(--comments-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* EXTRA */
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.08);
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.12);
+
+  --shadow-md: 
+    0 4px 12px rgba(0, 0, 0, 0.14),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+
+  --shadow-lg:
+    0 10px 30px rgba(0, 0, 0, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.12);
+
+  --shadow-xl:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+/* =========================
+   Cloud × Cyan – LIGHT
+========================= */
+:root {
+  --background: oklch(0.985 0.006 240);
+  --background-header: rgba(240, 246, 250, 0.3);
+  --background-footer: oklch(0.97 0.008 240);
+
+  --foreground: oklch(0.17 0.02 255);
+  --muted-foreground: oklch(0.45 0.02 255);
+
+  --card: oklch(0.995 0.003 240);
+  --card-foreground: oklch(0.17 0.02 255);
+
+  --button: rgba(255, 255, 255, 0.4);
+  --button-foreground: oklch(0.17 0.02 255);
+
+  --popover: oklch(0.995 0.003 240);
+  --popover-foreground: oklch(0.17 0.02 255);
+
+  --primary: rgb(255, 208, 117);
+  --primary-foreground: oklch(0.14 0.02 260);
+
+  --secondary: oklch(0.93 0.02 230);
+  --secondary-foreground: oklch(0.22 0.02 255);
+
+  --comments-background: #dbe4ed30;
+  --comments-foreground: #000000;
+
+  --accent: oklch(0.9 0.05 200);
+  --accent-foreground: oklch(0.22 0.02 255);
+
+  --border: oklch(0.88 0.01 255);
+  --input: rgba(211, 216, 222, 0.23);
+  --ring: rgb(255, 208, 117);
+
+  --destructive: oklch(0.58 0.22 25);
+}
+
+/* =========================
+   Slate × Teal – DARK
+========================= */
+html.dark {
+  --background: oklch(0.16 0.02 260);
+  --background-header: rgba(12, 18, 26, 0.3);
+  --background-footer: oklch(0.18 0.02 260);
+
+  --foreground: oklch(0.93 0.01 95);
+  --muted-foreground: oklch(0.62 0.02 260);
+
+  --card: oklch(0.21 0.02 260);
+  --card-foreground: oklch(0.93 0.01 95);
+
+  --button: rgba(19, 25, 34, 0.4);
+  --button-foreground: oklch(0.93 0.01 95);
+
+  --popover: oklch(0.21 0.02 260);
+  --popover-foreground: oklch(0.93 0.01 95);
+
+  --primary: rgb(255, 208, 117);
+  --primary-foreground: oklch(0.62 0.02 260);
+
+  --secondary: oklch(0.28 0.03 250);
+  --secondary-foreground: oklch(0.93 0.01 95);
+
+  --comments-background: #41485530;
+  --comments-foreground: #ffffff;
+
+  --accent: oklch(0.34 0.07 180);
+  --accent-foreground: oklch(0.95 0.01 95);
+
+  --border: oklch(1 0 0 / 14%);
+  --input: rgba(255, 255, 255, 0.09);
+  --ring: rgb(255, 208, 117);
+
+  --destructive: oklch(0.6 0.22 25);
+}

@@ -1,0 +1,41 @@
+/* =========================
+   IMPORT
+========================= */
+
+/* Reset  */
+@import './reset.css';
+
+@import './variables.css';
+@import './buttons.css';
+@import './inputs.css';
+@import './header.css';
+@import './footer.css';
+@import './layout.css';
+@import './typography.css';
+@import './utilities.css';
+@import './thememode.css';
+
+
+/* =========================
+   Body 
+========================= */
+
+body {
+  background: var(--color-background);
+}
+
+/* =========================
+   Main
+========================= */
+main {
+  min-height: calc(100vh - 60px);
+  padding: 80px 0;
+}
+
+.main-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+

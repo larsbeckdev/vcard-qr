@@ -1,0 +1,38 @@
+/* =========================
+   Theme Toggle
+========================= */
+/* Reset */
+#theme-toggle .icon {
+  display: none;
+}
+
+/* LIGHT MODE */
+html.light #theme-toggle .icon-sun {
+  display: inline-flex;
+}
+
+/* DARK MODE */
+html.dark #theme-toggle .icon-moon {
+  display: inline-flex;
+}
+
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-button);
+  color: var(--color-button-foreground);
+
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+#theme-toggle:hover {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}

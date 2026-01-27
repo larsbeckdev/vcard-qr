@@ -1,0 +1,29 @@
+/* =========================
+   Input (Default)
+========================= */
+input,
+.input,
+textarea,
+.textarea {
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--color-input);
+  color: var(--color-foreground);
+
+}
+
+input:hover,
+.input:hover,
+textarea:hover,
+.textarea:hover {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+
+
+
