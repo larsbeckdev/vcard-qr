@@ -8,8 +8,8 @@
 
   /* Layout */
   --padding: 1rem;
-  --max-width-layout: 1440px;
-  --max-width-container: 1440px;
+  --max-width-layout: 1040px;
+  --max-width-container: 1040px;
 
   --radius: 0.625rem;
   --radius-sm: calc(var(--radius) - 4px);
