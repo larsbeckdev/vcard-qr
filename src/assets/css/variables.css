@@ -112,12 +112,9 @@
   --destructive: oklch(0.58 0.22 25);
 }
 
-/* =========================
-   Slate × Teal – DARK
-========================= */
 html.dark {
   --background: oklch(0.16 0.02 260);
-  --background-header: rgba(12, 18, 26, 0.3);
+  --background-header: rgba(12, 18, 26, 0.35);
   --background-footer: oklch(0.18 0.02 260);
 
   --foreground: oklch(0.93 0.01 95);
@@ -126,27 +123,28 @@ html.dark {
   --card: oklch(0.21 0.02 260);
   --card-foreground: oklch(0.93 0.01 95);
 
-  --button: rgba(19, 25, 34, 0.4);
+  --button: rgba(19, 25, 34, 0.45);
   --button-foreground: oklch(0.93 0.01 95);
 
   --popover: oklch(0.21 0.02 260);
   --popover-foreground: oklch(0.93 0.01 95);
 
-  --primary: rgb(255, 208, 117);
-  --primary-foreground: oklch(0.62 0.02 260);
+  /* 🔥 Primary – leuchtend, nicht grell */
+  --primary: oklch(0.78 0.16 60);
+  --primary-foreground: oklch(0.14 0.02 260);
 
   --secondary: oklch(0.28 0.03 250);
   --secondary-foreground: oklch(0.93 0.01 95);
-
-  --comments-background: #41485530;
-  --comments-foreground: #ffffff;
 
   --accent: oklch(0.34 0.07 180);
   --accent-foreground: oklch(0.95 0.01 95);
 
   --border: oklch(1 0 0 / 14%);
   --input: rgba(255, 255, 255, 0.09);
-  --ring: rgb(255, 208, 117);
+
+  /* ✨ Glow auf Dark */
+  --ring: oklch(0.78 0.16 60);
 
   --destructive: oklch(0.6 0.22 25);
 }
+
