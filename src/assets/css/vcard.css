@@ -80,7 +80,7 @@ button {
   display: grid;
   place-items: center;
   border: 1px solid var(--color-border);
-  background
+  background: var(--color-input);
   border-radius: 12px;
 }
 
