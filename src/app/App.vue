@@ -149,20 +149,7 @@ import LogoSecondary from "@/components/logo/LogoSecondary.vue";
         </form>
       </section>
 
-      <!-- <section class="container qr-preview-section">
-          <h2>QR Preview</h2>
-
-          <div id="qr" class="qr-box"></div>
-
-          <a id="download" class="qr-download" download="vcard-qr.png">
-            Download PNG
-          </a>
-
-          <details class="vcard-debug">
-            <summary>vCard text (debug)</summary>
-            <pre id="vcardText"></pre>
-          </details>
-        </section> -->
+     
     </div>
   </main>
 
