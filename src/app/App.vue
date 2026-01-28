@@ -1,6 +1,7 @@
 <script setup>
 import LogoPrimary from "@/components/logo/LogoPrimary.vue";
 import LogoSecondary from "@/components/logo/LogoSecondary.vue";
+import ThemeToggle from "@/components/toggle/ThemeToggle.vue";
 </script>
 
 <template>
@@ -16,13 +17,14 @@ import LogoSecondary from "@/components/logo/LogoSecondary.vue";
 
       <div class="site-header-inner-right">
         <div class="dark-mode-toggle-box">
-          <button
+          <ThemeToggle />
+          <!-- <button
             onclick="toggleTheme()"
             id="theme-toggle"
             type="button"
             aria-label="Theme umschalten">
             Theme wechseln
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
