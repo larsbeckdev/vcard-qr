@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import Logo from '@/assets/logo.svg'
+</script>
 
 <template>
   <!-- --------------- HEADER ------------------ -->
