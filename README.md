@@ -1,17 +1,17 @@
 # vcard-qr
 
-Kleine Web-App zur Anzeige einer digitalen Visitenkarte per QR-Code.  
-Gebaut mit **Vite** als Build-Tool und **Vue 3** für komponentenbasierte UI.
+A small web application to display a digital business card via QR code.  
+Built with **Vite** as the build tool and **Vue 3** for a component-based UI.
 
 ---
 
 ## 🚀 Tech Stack
 
-- **Vite** – schneller Dev-Server & Build
-- **Vue 3** – UI-Komponenten (SFC)
+- **Vite** – fast dev server and build tool
+- **Vue 3** – UI components (Single File Components)
 - **ES Modules**
 
-> Vite bleibt die Build-Grundlage – Vue ist als Plugin integriert.
+> Vite remains the build foundation – Vue is integrated via a plugin.
 
 ---
 
@@ -22,9 +22,16 @@ npm install
 
 ```
 
-## Build
+## 🧑‍💻 Development
 
 ```bash
-npm build
+npm run dev
+
+```
+
+## 🏗️ Build
+
+```bash
+npm run build
 
 ```
