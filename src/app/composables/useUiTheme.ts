@@ -1,3 +1,4 @@
+// useUiTheme.ts
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import {
   darkTheme,
@@ -9,15 +10,16 @@ type ThemeMode = "auto" | "light" | "dark";
 
 const STORAGE_KEY = "ui.theme.mode";
 
+// global (singleton) state:
 const mode = ref<ThemeMode>("auto");
 const systemPrefersDark = ref(false);
 
 let mql: MediaQueryList | null = null;
+let mqlHandler: ((e: MediaQueryListEvent) => void) | null = null;
 
 function readStoredMode(): ThemeMode {
   const raw = localStorage.getItem(STORAGE_KEY);
-  if (raw === "light" || raw === "dark" || raw === "auto") return raw;
-  return "auto";
+  return raw === "light" || raw === "dark" || raw === "auto" ? raw : "auto";
 }
 
 function writeStoredMode(value: ThemeMode) {
@@ -39,11 +41,9 @@ export function useUiTheme() {
     isDark.value ? darkTheme : null,
   );
 
-  const themeOverrides = computed<GlobalThemeOverrides>(() => {
-    return {
-      // common: { primaryColor: "#FF8A00" }
-    };
-  });
+  const themeOverrides = computed<GlobalThemeOverrides>(() => ({
+    // common: { primaryColor: "#FF8A00" }
+  }));
 
   function setMode(value: ThemeMode) {
     mode.value = value;
@@ -51,6 +51,7 @@ export function useUiTheme() {
   }
 
   function toggleDark() {
+    // wenn auto aktiv ist, wird beim Klick explizit light/dark gesetzt
     setMode(isDark.value ? "light" : "dark");
   }
 
@@ -59,25 +60,32 @@ export function useUiTheme() {
   }
 
   onMounted(() => {
-    // initial load
+    // initial
     mode.value = readStoredMode();
     systemPrefersDark.value = getSystemPrefersDark();
 
-    // live OS changes (nur relevant für auto, aber wir tracken immer)
+    // subscribe OS changes
     mql = window.matchMedia?.("(prefers-color-scheme: dark)") ?? null;
 
-    const handler = (e: MediaQueryListEvent) => {
+    mqlHandler = (e: MediaQueryListEvent) => {
       systemPrefersDark.value = e.matches;
     };
 
-    if (mql?.addEventListener) mql.addEventListener("change", handler);
-    else if (mql?.addListener) mql.addListener(handler); // Safari legacy
+    if (mql && mqlHandler) {
+      if (mql.addEventListener) mql.addEventListener("change", mqlHandler);
+      // Safari legacy
+      else (mql as any).addListener?.(mqlHandler);
+    }
+  });
 
-    onBeforeUnmount(() => {
-      if (!mql) return;
-      if (mql.removeEventListener) mql.removeEventListener("change", handler);
-      else if (mql.removeListener) mql.removeListener(handler);
-    });
+  onBeforeUnmount(() => {
+    if (!mql || !mqlHandler) return;
+
+    if (mql.removeEventListener) mql.removeEventListener("change", mqlHandler);
+    else (mql as any).removeListener?.(mqlHandler);
+
+    mql = null;
+    mqlHandler = null;
   });
 
   return {
