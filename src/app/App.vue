@@ -10,10 +10,12 @@ import { NLayout, NLayoutHeader, NLayoutContent, NScrollbar } from "naive-ui";
 <template>
   <UiProvider>
     <!-- --------------- HEADER ------------------ -->
-    <!-- <Header /> -->
+    <Header />
     <!-- --------------- MAIN ------------------ -->
-    <!-- <Main /> -->
+    <Main />
     <!-- --------------- FOOTER ------------------ -->
-    <!-- <Footer /> -->
+    <!-- --------------- FOOTER ------------------ -->
+    <Footer />
+     
   </UiProvider>
 </template>
