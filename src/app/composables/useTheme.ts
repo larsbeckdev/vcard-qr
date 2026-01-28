@@ -1,55 +1,54 @@
-// src/app/composables/useTheme.ts
-import { computed, watch } from "vue";
-import { usePreferredDark, useStorage } from "@vueuse/core";
-import { getTheme } from "@/app/theme";
+import { computed, watchEffect } from "vue";
+import { useOsTheme } from "naive-ui";
 
 export type ThemeMode = "auto" | "light" | "dark";
 
 /**
- * Persisted mode:
- * - auto: follows system (and updates live)
- * - light/dark: forced
+ * Minimal, no vueuse needed:
+ * - mode persisted in localStorage
+ * - auto follows OS via Naive UI useOsTheme()
  */
-const mode = useStorage<ThemeMode>("ui:themeMode", "auto");
 
-// system preference (reactive)
-const preferredDark = usePreferredDark();
+const STORAGE_KEY = "ui:themeMode";
 
-// derived boolean used by Naive UI theme function
-const isDark = computed(() => {
-  if (mode.value === "auto") return preferredDark.value;
-  return mode.value === "dark";
-});
+function loadMode(): ThemeMode {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw === "light" || raw === "dark" || raw === "auto") return raw;
+  return "auto";
+}
 
-// Naive UI theme
-const theme = computed(() => getTheme(isDark.value));
-
-/**
- * Optional: reflect to DOM (useful for your own CSS too)
- */
-watch(
-  isDark,
-  (v) => {
-    document.documentElement.dataset.colorMode = v ? "dark" : "light";
-  },
-  { immediate: true },
-);
+function saveMode(mode: ThemeMode) {
+  localStorage.setItem(STORAGE_KEY, mode);
+}
 
 export function useTheme() {
+  const osTheme = useOsTheme(); // "light" | "dark"
+
+  // reactive mode (simple, without VueUse)
+  const mode = computed<ThemeMode>({
+    get() {
+      return loadMode();
+    },
+    set(v) {
+      saveMode(v);
+    },
+  });
+
+  const resolved = computed<"light" | "dark">(() => {
+    if (mode.value === "auto") return osTheme.value ?? "light";
+    return mode.value;
+  });
+
+  const isDark = computed(() => resolved.value === "dark");
+
+  // optional: for your own CSS hooks
+  watchEffect(() => {
+    document.documentElement.dataset.theme = resolved.value; // "light" | "dark"
+  });
+
   function setMode(next: ThemeMode) {
     mode.value = next;
   }
 
-  function toggleDarkLight() {
-    // toggles between forced light/dark (keeps auto separate)
-    mode.value = isDark.value ? "light" : "dark";
-  }
-
-  return {
-    mode,
-    isDark,
-    theme,
-    setMode,
-    toggleDarkLight,
-  };
+  return { mode, resolved, isDark, setMode };
 }
