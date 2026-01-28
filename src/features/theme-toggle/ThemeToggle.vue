@@ -1,10 +1,17 @@
+<!-- src/app/components/ThemeModeToggle.vue -->
 <script setup lang="ts">
-import { NSwitch } from "naive-ui";
-import { useTheme } from "@/app/composables/useTheme";
+import NSegmented from "naive-ui";
+import { useTheme, type ThemeMode } from "@/app/composables/useTheme";
 
-const { isDark, setDark } = useTheme();
+const { mode, setMode } = useTheme();
+
+const options: Array<{ label: string; value: ThemeMode }> = [
+  { label: "Auto", value: "auto" },
+  { label: "Light", value: "light" },
+  { label: "Dark", value: "dark" },
+];
 </script>
 
 <template>
-  <n-switch :value="isDark" @update:value="setDark" />
+  <n-segmented :value="mode" :options="options" @update:value="setMode" />
 </template>
