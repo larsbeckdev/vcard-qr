@@ -9,8 +9,8 @@ import LogoSecondary from "./components/LogoSecondary.vue";
     <div class="layout site-header-inner">
       <div class="site-header-inner-left">
         <div class="logo-box">
-          <LogoPrimary :width="50" />
-          <LogoSecondary :width="30" />
+          <LogoPrimary :width="30" />
+          <LogoSecondary :width="50" />
         </div>
       </div>
 
