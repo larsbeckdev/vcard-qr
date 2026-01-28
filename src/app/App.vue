@@ -1,12 +1,10 @@
 <script setup>
-import LogoPrimary from "@/components/logo/LogoPrimary.vue";
-// import LogoSecondary from "@/components/logo/LogoSecondary.vue";
 
-import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
 
 import UiProvider from "@/app/providers/UiProvider.vue";
 
 import Header from "@/app/layout/default/Header.vue";
+import Main from "@/app/layout/default/Main.vue";
 import Footer from "@/app/layout/default/Footer.vue";
 </script>
 
@@ -15,11 +13,7 @@ import Footer from "@/app/layout/default/Footer.vue";
     <!-- --------------- HEADER ------------------ -->
     <Header />
     <!-- --------------- MAIN ------------------ -->
-    <main>
-      <div class="main-inner">
-        <router-view />
-      </div>
-    </main>
+    <Main />
     <!-- --------------- FOOTER ------------------ -->
     <Footer />
   </UiProvider>
