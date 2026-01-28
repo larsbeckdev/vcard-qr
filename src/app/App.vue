@@ -17,9 +17,11 @@ import {
   <UiProvider>
     <n-layout style="min-height: 100vh">
       <!-- Header -->
-      <n-layout-header bordered style="height: 64px">
-        <Header />
-      </n-layout-header>
+      <header>
+        <n-layout-header bordered style="height: 64px">
+          <Header />
+        </n-layout-header>
+      </header>
 
       <!-- Content -->
       <n-layout-content style="height: calc(100vh - 64px - 48px)">
