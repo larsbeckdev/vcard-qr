@@ -103,8 +103,10 @@ function generateQR() {
   downloadLink.style.display = "none";
 
   // Create QR
+  const qrText = toUTF8ByteString(vcard);
+
   qrInstance = new QRCode(qrContainer, {
-    text: vcard,
+    text: qrText,
     width: 240,
     height: 240,
     correctLevel: QRCode.CorrectLevel.M,
