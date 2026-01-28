@@ -17,12 +17,12 @@ import {
   <UiProvider>
     <n-layout style="height: 100vh">
       <!-- Header -->
-      <n-layout-header bordered style="height: 64px">
+      <n-layout-header bordered style="height: 64px" class="layout-header">
         <Header />
       </n-layout-header>
 
       <!-- Content -->
-      <n-layout-content style="flex: 1; min-height: 0">
+      <n-layout-content style="flex: 1; min-height: 0" class="layout-content">
         <n-scrollbar style="height: 100%">
           <main class="main">
             <router-view />
@@ -31,9 +31,13 @@ import {
       </n-layout-content>
 
       <!-- Footer -->
-      <n-layout-footer bordered style="height: 48px">
+      <n-layout-footer bordered style="height: 48px" class="layout-footer">
         <Footer />
       </n-layout-footer>
     </n-layout>
   </UiProvider>
 </template>
+
+<style scoped>
+
+</style>
