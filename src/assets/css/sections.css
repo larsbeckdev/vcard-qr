@@ -1,10 +1,6 @@
 .vcard-section {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
 }
 
-.vcard-form {
+#vcard-form {
     width: 100%;
 }
