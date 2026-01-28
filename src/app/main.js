@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "@/app/app.css";
-import { initTheme } from "@/app/theme/theme.store.js";
+import { initTheme } from "./theme/theme.init";
 
 // Initial Theme Load
 initTheme();
