@@ -41,6 +41,14 @@ header {
   width: 70px;
 }
 
+.logo-dm {
+  display: none;
+  width: 100%;
+  max-width: 250px;
+  height: 70px;
+  width: 70px;
+}
+
 .fotogram-full-svg-letter {
   fill: var(--color-foreground);
 }
