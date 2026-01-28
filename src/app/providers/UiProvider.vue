@@ -9,10 +9,10 @@ import {
 } from "naive-ui";
 
 import { computed } from "vue";
-import { getTheme } from "@/app/theme/theme";
-import { themeOverrides } from "@/app/theme/overrides";
+import { getTheme, themeOverrides } from "@/app/theme";
 
 const isDark = false;
+
 const theme = computed(() => getTheme(isDark));
 </script>
 
