@@ -37,6 +37,29 @@ import {
 </template>
 
 <style scoped>
+:root {
+  --header-h: 64px;
+  --footer-h: 48px;
+}
+
+.layout-header {
+  height: var(--header-h);
+}
+.layout-footer {
+  height: var(--footer-h);
+}
+
+.layout-content {
+  padding-top: var(--header-h);
+  padding-bottom: var(--footer-h);
+}
+
+.content-scroll {
+  height: calc(100vh - var(--header-h) - var(--footer-h));
+}
+
+
+
 .app-layout {
   height: 100vh;
   overflow: hidden;
