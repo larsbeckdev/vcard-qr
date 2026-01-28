@@ -42,38 +42,40 @@ import {
   --footer-h: 48px;
 }
 
+/* HEADER */
 .layout-header {
   height: var(--header-h);
-}
-.layout-footer {
-  height: var(--footer-h);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
+/* FOOTER */
+.layout-footer {
+  height: var(--footer-h);
+  position: fixed;
+}
+
+/* CONTENT */
 .layout-content {
   padding-top: var(--header-h);
   padding-bottom: var(--footer-h);
 }
 
+/* SCROLL */
 .content-scroll {
   height: calc(100vh - var(--header-h) - var(--footer-h));
 }
 
-
-
+/* APP LAYOUT */
 .app-layout {
   height: 100vh;
   overflow: hidden;
 }
 
-/* HEADER */
-.layout-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  z-index: 100;
-}
+
 
 /* FOOTER */
 .layout-footer {
