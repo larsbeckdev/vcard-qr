@@ -1,19 +1,20 @@
 import type { GlobalThemeOverrides } from "naive-ui";
+import { tokens } from "./tokens";
 
 export const themeOverrides: GlobalThemeOverrides = {
   common: {
-    primaryColor: "#f97316",
-    primaryColorHover: "#fb923c",
-    primaryColorPressed: "#ea580c",
-    borderRadius: "10px",
+    primaryColor: tokens.colors.primary,
+    primaryColorHover: tokens.colors.primaryHover,
+    primaryColorPressed: tokens.colors.primaryPressed,
+    borderRadius: tokens.radii.md,
   },
 
   Button: {
-    borderRadiusMedium: "10px",
-    fontWeight: "600",
+    borderRadiusMedium: tokens.radii.md,
+    fontWeight: tokens.font.weightSemibold,
   },
 
   Card: {
-    borderRadius: "14px",
+    borderRadius: tokens.radii.lg,
   },
 };
