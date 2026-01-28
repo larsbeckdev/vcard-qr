@@ -42,9 +42,8 @@ header {
 }
 
 .logo-dm {
-  display: none;
   width: 100%;
-  max-width: 250px;
+  max-width: px;
   height: 70px;
   width: 70px;
 }
