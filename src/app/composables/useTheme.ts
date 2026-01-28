@@ -1,13 +1,8 @@
-import { computed, watchEffect } from "vue";
+// src/app/composables/useTheme.ts
+import { ref, computed, watch, watchEffect } from "vue";
 import { useOsTheme } from "naive-ui";
 
 export type ThemeMode = "auto" | "light" | "dark";
-
-/**
- * Minimal, no vueuse needed:
- * - mode persisted in localStorage
- * - auto follows OS via Naive UI useOsTheme()
- */
 
 const STORAGE_KEY = "ui:themeMode";
 
@@ -17,21 +12,13 @@ function loadMode(): ThemeMode {
   return "auto";
 }
 
-function saveMode(mode: ThemeMode) {
-  localStorage.setItem(STORAGE_KEY, mode);
-}
-
 export function useTheme() {
-  const osTheme = useOsTheme(); // "light" | "dark"
+  const osTheme = useOsTheme();
 
-  // reactive mode (simple, without VueUse)
-  const mode = computed<ThemeMode>({
-    get() {
-      return loadMode();
-    },
-    set(v) {
-      saveMode(v);
-    },
+  const mode = ref<ThemeMode>(loadMode());
+
+  watch(mode, (v) => {
+    localStorage.setItem(STORAGE_KEY, v);
   });
 
   const resolved = computed<"light" | "dark">(() => {
@@ -41,9 +28,8 @@ export function useTheme() {
 
   const isDark = computed(() => resolved.value === "dark");
 
-  // optional: for your own CSS hooks
   watchEffect(() => {
-    document.documentElement.dataset.theme = resolved.value; // "light" | "dark"
+    document.documentElement.dataset.theme = resolved.value;
   });
 
   function setMode(next: ThemeMode) {
