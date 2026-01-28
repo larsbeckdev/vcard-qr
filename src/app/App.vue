@@ -15,15 +15,15 @@ import {
 
 <template>
   <UiProvider>
-    <n-layout style="height: 100vh">
+    <n-layout class="app-layout">
       <!-- Header -->
-      <n-layout-header bordered style="height: 64px" class="layout-header">
+      <n-layout-header bordered class="layout-header">
         <Header />
       </n-layout-header>
 
       <!-- Content -->
-      <n-layout-content style="flex: 1; min-height: 0" class="layout-content">
-        <n-scrollbar style="height: 100%">
+      <n-layout-content class="layout-content">
+        <n-scrollbar class="content-scroll">
           <main class="main">
             <router-view />
           </main>
@@ -31,7 +31,7 @@ import {
       </n-layout-content>
 
       <!-- Footer -->
-      <n-layout-footer bordered style="height: 48px" class="layout-footer">
+      <n-layout-footer bordered class="layout-footer">
         <Footer />
       </n-layout-footer>
     </n-layout>
@@ -39,5 +39,47 @@ import {
 </template>
 
 <style scoped>
+.app-layout {
+  height: 100vh;
+  overflow: hidden;
+}
 
+/* HEADER */
+.layout-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 100;
+}
+
+/* FOOTER */
+.layout-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 100;
+}
+
+/* CONTENT */
+.layout-content {
+  position: relative;
+  padding-top: 64px; 
+  padding-bottom: 48px; 
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.content-scroll {
+  height: calc(100vh - 64px - 48px);
+}
+
+
+.main {
+  min-height: 100%;
+}
 </style>
