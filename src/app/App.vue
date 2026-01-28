@@ -24,16 +24,16 @@ import {
       </header>
 
       <!-- Content -->
-      <n-layout-content style="height: calc(100vh - 64px - 48px)">
-        <n-scrollbar style="height: 100%">
-          <main>
+      <main>
+        <n-layout-content style="height: calc(100vh - 64px - 48px)">
+          <n-scrollbar style="height: 100%">
             <div class="main-inner">
               <router-view />
             </div>
-          </main>
-        </n-scrollbar>
-      </n-layout-content>
-
+          </n-scrollbar>
+        </n-layout-content>
+      </main>
+      
       <!-- Footer -->
       <n-layout-footer bordered style="height: 48px">
         <Footer />
