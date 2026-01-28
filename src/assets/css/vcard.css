@@ -64,6 +64,15 @@
   border-radius: 8px;
 }
 
+.form-actions-import-export {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
 /* @media (max-width: 576px) {
   .form-actions {
     flex-direction: column;
