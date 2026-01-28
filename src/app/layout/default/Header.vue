@@ -5,7 +5,7 @@ import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
 </script>
 
 <template>
-  <header class="site-header">
+  <div class="site-header">
     <div class="layout site-header-inner">
       <div class="site-header-inner-left">
         <div class="logo-box">
@@ -15,12 +15,8 @@ import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
       </div>
 
       <div class="site-header-inner-right">
-        <div class="dark-mode-toggle-box">
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </div>
     </div>
-  </header>
+  </div>
 </template>
-
-<style scoped></style>
