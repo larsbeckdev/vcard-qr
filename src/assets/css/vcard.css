@@ -1,0 +1,108 @@
+/* =========================
+   Intro
+========================= */
+.intro-text {
+  margin-top: 8px;
+  max-width: 640px;
+  opacity: 0.85;
+}
+
+/* =========================
+   Form
+========================= */
+.vcard-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.form-group {
+  display: grid;
+  gap: 6px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+label {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #888;
+}
+
+/* =========================
+   Actions
+========================= */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#btn-generate {
+  background: #111;
+  color: #fff;
+}
+
+#btn-clear {
+  /* background: #eee; */
+  /* color: #111; */
+}
+
+/* =========================
+   QR Preview
+========================= */
+.qr-preview-section {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.qr-box {
+  width: 260px;
+  height: 260px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.qr-download {
+  display: none;
+  width: fit-content;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Debug
+========================= */
+.vcard-debug {
+  margin-top: 6px;
+}
+
+.vcard-debug pre {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
