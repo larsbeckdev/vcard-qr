@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import { router } from "@/router/router.index";
 
 import "@/app/app.css";
 import { initTheme } from "@/app/theme/theme.init";
@@ -8,4 +9,4 @@ import { initTheme } from "@/app/theme/theme.init";
 initTheme();
 
 // Create and mount Vue app
-createApp(App).mount("#app");
+createApp(App).use(router).mount("#app");
