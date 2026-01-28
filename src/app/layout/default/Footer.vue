@@ -1,9 +1,18 @@
 <script setup></script>
 
 <template>
-  <div class="layout site-footer-inner">
+  <div class="site-footer">
     <p>&copy; 2026 vCard-QR. All rights reserved.</p>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.site-footer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+</style>
