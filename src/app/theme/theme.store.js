@@ -3,21 +3,27 @@ import { ref, computed } from "vue";
 const KEY = "theme";
 const mode = ref(localStorage.getItem(KEY) || "light");
 
+function applyTheme(theme) {
+  const html = document.documentElement;
+
+  html.classList.remove("light", "dark");
+  html.classList.add(theme);
+}
+
 export function useThemeStore() {
   const isDark = computed(() => mode.value === "dark");
 
   function setTheme(next) {
     mode.value = next;
     localStorage.setItem(KEY, next);
-    document.documentElement.classList.toggle("dark", next === "dark");
+    applyTheme(next);
   }
 
   function toggleTheme() {
     setTheme(isDark.value ? "light" : "dark");
   }
 
-  // init einmalig beim ersten Use
-  setTheme(mode.value);
+  applyTheme(mode.value);
 
   return { mode, isDark, setTheme, toggleTheme };
 }
