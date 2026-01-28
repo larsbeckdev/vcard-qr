@@ -5,17 +5,17 @@
 /* Reset  */
 @import './reset.css';
 
-@import './variables.css';
-@import './buttons.css';
+/* @import './variables.css'; */
+/* @import './buttons.css'; */
 @import './inputs.css';
 @import './header.css';
 @import './footer.css';
 @import './layout.css';
 @import './typography.css';
-@import './utilities.css';
+/* @import './utilities.css'; */
 @import './thememode.css';
 
-@import './sections.css';
+/* @import './sections.css'; */
 @import './vcard.css';
 
 /* =========================

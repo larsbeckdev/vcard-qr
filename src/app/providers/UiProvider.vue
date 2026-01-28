@@ -8,7 +8,6 @@ import {
 } from "naive-ui";
 
 import { useThemeMode } from "@/app/composables/useThemeMode";
-
 </script>
 
 <template>
