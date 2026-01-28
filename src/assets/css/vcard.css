@@ -81,6 +81,10 @@ button {
   border-radius: 12px;
 }
 
+.qr-box img {
+    border-radius: 8px;
+}
+
 .qr-download {
   display: none;
   width: fit-content;
