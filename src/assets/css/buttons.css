@@ -1,9 +1,7 @@
 /* =========================
    Button (Default)
 ========================= */
-button,
-.btn,
-.button {
+.btn {
   font: inherit;
   font-size: 1rem;
   line-height: 1.2;
@@ -19,20 +17,16 @@ button,
   opacity: 1;
 }
 
-button:hover,
-.btn:hover,
-.button:hover {
+.btn:hover {
   outline: 2px solid var(--color-ring);
   outline-offset: 2px;
 }
 
-button:active,
-.btn:active,
-.button:active {
+.btn:active {
   transform: translateY(1px);
 }
 
-.button--secondary {
+.btn-secondary {
   background: var(--color-secondary);
   color: var(--color-secondary-foreground);
   border-color: var(--color-border);
