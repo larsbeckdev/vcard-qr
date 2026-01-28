@@ -7,6 +7,10 @@ export const tokens = {
   font: {
     weightSemibold: "600",
   },
+  common: {
+    bodyColor: "#0f0f0f",
+    textColorBase: "#fff",
+  },
   colors: {
     primary: "#f97316",
     primaryHover: "#fb923c",
