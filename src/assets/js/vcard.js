@@ -13,7 +13,7 @@ const importFile = document.getElementById("import-file");
 let qrInstance = null;
 
 // ===== Storage =====
-const STORAGE_KEY = "vcardqr.form.v1";
+const STORAGE_KEY = "vcardqr";
 
 function escText(str = "") {
   return String(str)
