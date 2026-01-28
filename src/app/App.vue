@@ -2,9 +2,14 @@
 import LogoPrimary from "@/components/logo/LogoPrimary.vue";
 import LogoSecondary from "@/components/logo/LogoSecondary.vue";
 import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
+
+import UiProvider from "@/app/providers/UiProvider.vue";
 </script>
 
 <template>
+  <UiProvider>
+    <router-view />
+  </UiProvider>
   <!-- --------------- HEADER ------------------ -->
   <header class="site-header">
     <div class="layout site-header-inner">
