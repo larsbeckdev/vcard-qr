@@ -22,23 +22,10 @@
    Body 
 ========================= */
 
-/* body {
-  
-} */
-
 /* =========================
    Main
 ========================= */
-/* main {
-  min-height: calc(200vh - 60px);
-  padding: 80px 0;
-}
 
-.main-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-} */
 
 
 html, body {
