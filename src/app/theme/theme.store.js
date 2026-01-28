@@ -10,6 +10,10 @@ function applyTheme(theme) {
   html.classList.add(theme);
 }
 
+export function initTheme() {
+  applyTheme(mode.value);
+}
+
 export function useThemeStore() {
   const isDark = computed(() => mode.value === "dark");
 
