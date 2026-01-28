@@ -64,6 +64,14 @@
   border-radius: 8px;
 }
 
+.form-actions-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .form-actions-import-export {
   width: 100%;
   display: flex;
