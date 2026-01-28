@@ -145,25 +145,29 @@
             </div>
 
             <div class="form-actions">
-              <button type="button" id="btn-generate" class="btn btn-primary">
-                Generate QR
-              </button>
-              <button type="button" id="btn-clear" class="btn btn-ghost">
-                Clear
-              </button>
+              <div class="form-actions-main">
+                <button type="button" id="btn-generate" class="btn btn-primary">
+                  Generate QR
+                </button>
+                <button type="button" id="btn-clear" class="btn btn-ghost">
+                  Clear
+                </button>
+              </div>
 
-              <button type="button" id="btn-export" class="btn btn-outline">
-                Export
-              </button>
+              <div class="form-actions-import-export">
+                <button type="button" id="btn-export" class="btn btn-outline">
+                  Export
+                </button>
 
-              <label class="btn btn-outline">
-                Import
-                <input
-                  id="import-file"
-                  type="file"
-                  accept="application/json"
-                  hidden />
-              </label>
+                <label class="btn btn-outline">
+                  Import
+                  <input
+                    id="import-file"
+                    type="file"
+                    accept="application/json"
+                    hidden />
+                </label>
+              </div>
             </div>
           </form>
         </section>
