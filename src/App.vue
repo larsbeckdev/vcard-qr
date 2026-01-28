@@ -1,5 +1,6 @@
 <script setup>
-import Logo from "@/assets/png/logo.png";
+import LogoPrimary from "./components/LogoPrimary.vue";
+import LogoSecondary from "./components/LogoSecondary.vue";
 </script>
 
 <template>
@@ -8,30 +9,8 @@ import Logo from "@/assets/png/logo.png";
     <div class="layout site-header-inner">
       <div class="site-header-inner-left">
         <div class="logo-box">
-          <!-- <a class="logo" href="#"
-              ><img
-                src="./src/assets/png/vcard-qr.png"
-                alt="vCard-QR Logo"
-                class="logo"
-            /></a> -->
-
-          <a
-            class="logo-dm"
-            href="https://dobamedia.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><img
-              src="./src/assets/png/logo.png"
-              alt="dobamedia Logo"
-              class="logo-dm" />
-          </a>
-
-          <!-- <a class="logo" href="#"
-              ><img
-                src="./src/assets/png/vcard-qr.png"
-                alt="vCard-QR Logo"
-                class="logo"
-            /></a> -->
+          <LogoPrimary :width="50" />
+          <LogoSecondary :width="30" />
         </div>
       </div>
 
