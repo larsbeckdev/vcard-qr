@@ -67,7 +67,7 @@
 
 @media (max-width: 576px) {
   .form-actions {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
