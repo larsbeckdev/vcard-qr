@@ -86,6 +86,11 @@ function clearQR() {
   qrInstance = null;
 }
 
+function toUTF8ByteString(str) {
+  // wandelt Unicode JS-String -> UTF-8 Byte-String (für alte QRCode libs)
+  return unescape(encodeURIComponent(str));
+}
+
 function generateQR() {
   const data = getFormData();
   const vcard = buildVCard(data);
@@ -119,7 +124,7 @@ function generateQR() {
 }
 
 btnGenerate.addEventListener("click", (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
   generateQR();
 });
 
