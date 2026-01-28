@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { NConfigProvider, darkTheme } from "naive-ui";
-import { useThemeStore } from "@/app/theme/theme.store";
-import { createNaiveThemeOverrides } from "@/app/theme/naive/overrides";
+import {
+  NConfigProvider,
+  NMessageProvider,
+  NDialogProvider,
+  NNotificationProvider,
+  NLoadingBarProvider,
+} from "naive-ui";
 
-// store
-const { isDark } = useThemeStore();
+import { useUiTheme } from "@/app/composables/useUiTheme";
 
-const nTheme = computed(() => (isDark.value ? darkTheme : null));
-
-const nOverrides = computed(() => {
-  void isDark.value;
-  return createNaiveThemeOverrides();
-});
+const { theme, themeOverrides } = useUiTheme();
 </script>
 
 <template>
-  <n-config-provider :theme="nTheme" :theme-overrides="nOverrides">
-    <slot />
+  <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
+    <n-loading-bar-provider>
+      <n-dialog-provider>
+        <n-notification-provider>
+          <n-message-provider>
+            <slot />
+          </n-message-provider>
+        </n-notification-provider>
+      </n-dialog-provider>
+    </n-loading-bar-provider>
   </n-config-provider>
 </template>
