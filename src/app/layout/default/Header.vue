@@ -2,6 +2,7 @@
 import LogoPrimary from "@/components/logo/LogoPrimary.vue";
 import LogoSecondary from "@/components/logo/LogoSecondary.vue";
 import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
+import { NCard, NButton } from "naive-ui";
 </script>
 
 <template>
@@ -17,6 +18,9 @@ import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
       <div class="site-header-inner-right">
         <div class="dark-mode-toggle-box">
           <ThemeToggle />
+          <n-card title="Theme Test">
+            <n-button type="primary">Primary</n-button>
+          </n-card>
         </div>
       </div>
     </div>
