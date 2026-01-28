@@ -2,6 +2,7 @@ import { ref, computed, watch, watchEffect } from "vue";
 import { useOsTheme } from "naive-ui";
 
 export type ThemeMode = "auto" | "light" | "dark";
+
 const STORAGE_KEY = "theme";
 
 function loadMode(): ThemeMode {
