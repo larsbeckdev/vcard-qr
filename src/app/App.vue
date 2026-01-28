@@ -44,71 +44,53 @@ import {
 </style>
 
 <style scoped>
-:root {
+/* Variablen NICHT auf :root in scoped */
+.app-layout {
   --header-h: 64px;
   --footer-h: 48px;
+
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* HEADER */
 .layout-header {
-  height: var(--header-h);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  height: var(--header-h);
   z-index: 100;
 }
 
 /* FOOTER */
 .layout-footer {
-  height: var(--footer-h);
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  height: var(--footer-h);
   z-index: 100;
 }
 
 /* CONTENT */
 .layout-content {
+  height: 100vh;
   padding-top: var(--header-h);
   padding-bottom: var(--footer-h);
-  position: relative;
-  padding-top: 64px;
-  padding-bottom: 48px;
-  height: 100vh;
   overflow: hidden;
 }
 
-/* SCROLL */
+/* SCROLL AREA */
 .content-scroll {
   height: calc(100vh - var(--header-h) - var(--footer-h));
 }
 
-/* APP LAYOUT */
-.app-layout {
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* FOOTER */
-.layout-footer {
-}
-
-/* CONTENT */
-.layout-content {
-  position: relative;
-  padding-top: 64px;
-  padding-bottom: 48px;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.content-scroll {
-  height: calc(100vh - 64px - 48px);
-}
-
-.main {
-  min-height: 100%;
+/* CENTERED INNER */
+.content-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 24px;
 }
 </style>
