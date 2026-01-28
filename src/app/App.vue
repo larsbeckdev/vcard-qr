@@ -15,32 +15,25 @@ import {
 
 <template>
   <UiProvider>
-    <n-layout style="min-height: 100vh">
+    <n-layout style="height: 100vh">
       <!-- Header -->
-      <header>
-        <n-layout-header bordered style="height: 64px">
-          <Header />
-        </n-layout-header>
-      </header>
+      <n-layout-header bordered style="height: 64px">
+        <Header />
+      </n-layout-header>
 
       <!-- Content -->
-      <main>
-        <n-layout-content style="height: calc(100vh - 64px - 48px)">
-          <n-scrollbar style="height: 100%">
-            <div class="main-inner">
-              <router-view />
-            </div>
-          </n-scrollbar>
-        </n-layout-content>
-      </main>
+      <n-layout-content style="flex: 1; min-height: 0">
+        <n-scrollbar style="height: 100%">
+          <main class="main-inner">
+            <router-view />
+          </main>
+        </n-scrollbar>
+      </n-layout-content>
 
       <!-- Footer -->
-
-      <footer>
-        <n-layout-footer bordered style="height: 48px">
-          <Footer />
-        </n-layout-footer>
-      </footer>
+      <n-layout-footer bordered style="height: 48px">
+        <Footer />
+      </n-layout-footer>
     </n-layout>
   </UiProvider>
 </template>
