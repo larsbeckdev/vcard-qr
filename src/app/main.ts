@@ -6,10 +6,4 @@ import "@/app/app.css";
 
 import "@/app/theme/tokens";
 
-// import { initTheme } from "@/app/theme/theme.init";
-
-// Initial theme setup (before mount)
-// initTheme();
-
-// Create and mount Vue app
 createApp(App).use(router).mount("#app");
