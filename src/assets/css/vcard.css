@@ -87,7 +87,6 @@
    QR Preview
 ========================= */
 .qr-preview-section {
-  margin-top: 24px;
   display: flex;
   gap: 12px;
   flex-direction: column;
