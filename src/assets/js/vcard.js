@@ -119,7 +119,7 @@ function generateQR() {
 }
 
 btnGenerate.addEventListener("click", (e) => {
-  e.preventDefault(); // wichtig, falls Button im <form> ist
+  e.preventDefault(); 
   generateQR();
 });
 
@@ -131,5 +131,5 @@ btnClear.addEventListener("click", (e) => {
 
 // optional: live update
 form.addEventListener("input", () => {
-  // generateQR();
+  generateQR();
 });
