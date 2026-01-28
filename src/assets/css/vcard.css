@@ -39,20 +39,6 @@
   gap: 12px;
 }
 
-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-input {
-  font-size: 0.95rem;
-}
-
-input:focus {
-  outline: none;
-  border-color: #888;
-}
-
 /* =========================
    Actions
 ========================= */

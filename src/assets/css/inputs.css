@@ -1,6 +1,13 @@
 /* =========================
    Input (Default)
 ========================= */
+
+label {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+
 input,
 .input,
 textarea,
@@ -10,6 +17,7 @@ textarea,
   line-height: 1.2;
   padding: 0.625rem 0.75rem;
   border: 1px solid transparent;
+  border-color: #888;
   border-radius: var(--radius-sm);
   background: var(--color-input);
   color: var(--color-foreground);
@@ -24,6 +32,9 @@ textarea:hover,
   outline-offset: 2px;
 }
 
-
+input:focus {
+  outline: none;
+  border-color: #888;
+}
 
 
