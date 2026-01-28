@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import LogoPrimary from "@/components/logo/LogoPrimary.vue";
+import LogoSecondary from "@/components/logo/LogoSecondary.vue";
+import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
+</script>
 
 <template>
   <header class="site-header">
@@ -6,7 +10,7 @@
       <div class="site-header-inner-left">
         <div class="logo-box">
           <LogoPrimary :width="30" />
-          <!-- <LogoSecondary :width="50" /> -->
+          <LogoSecondary :width="50" />
         </div>
       </div>
 

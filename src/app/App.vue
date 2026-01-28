@@ -1,8 +1,5 @@
 <script setup>
-
-
 import UiProvider from "@/app/providers/UiProvider.vue";
-
 import Header from "@/app/layout/default/Header.vue";
 import Main from "@/app/layout/default/Main.vue";
 import Footer from "@/app/layout/default/Footer.vue";
@@ -18,5 +15,3 @@ import Footer from "@/app/layout/default/Footer.vue";
     <Footer />
   </UiProvider>
 </template>
-
-<style scoped></style>
