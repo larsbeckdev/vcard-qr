@@ -5,6 +5,8 @@ import LogoPrimary from "@/components/logo/LogoPrimary.vue";
 import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
 
 import UiProvider from "@/app/providers/UiProvider.vue";
+
+
 </script>
 
 <template>
