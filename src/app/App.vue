@@ -24,7 +24,7 @@ import {
       <!-- Content -->
       <n-layout-content style="flex: 1; min-height: 0">
         <n-scrollbar style="height: 100%">
-          <main class="main-inner">
+          <main class="main">
             <router-view />
           </main>
         </n-scrollbar>
