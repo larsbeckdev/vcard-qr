@@ -6,7 +6,7 @@ input,
 textarea,
 .textarea {
   font: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.2;
   padding: 0.625rem 0.75rem;
   border: 1px solid transparent;
