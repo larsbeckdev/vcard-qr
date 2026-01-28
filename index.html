@@ -64,9 +64,23 @@
     <main>
       <div class="main-inner">
         <h1>vCard → QR</h1>
-        <section class="section container vcard-section">
-          
 
+        <section class="container qr-preview-section">
+          <h2>QR Preview</h2>
+
+          <div id="qr" class="qr-box"></div>
+
+          <a id="download" class="qr-download" download="vcard-qr.png">
+            Download PNG
+          </a>
+
+          <details class="vcard-debug">
+            <summary>vCard text (debug)</summary>
+            <pre id="vcardText"></pre>
+          </details>
+        </section>
+
+        <section class="section container vcard-section">
           <!-- <p class="intro-text">
             Mit einem Tap kannst du den Kontakt direkt als vCard speichern.
             Funktioniert auf iPhone und Android.
