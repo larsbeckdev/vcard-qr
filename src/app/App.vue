@@ -1,6 +1,6 @@
 <script setup>
-import LogoPrimary from "@/components/LogoPrimary.vue";
-import LogoSecondary from "@/components/LogoSecondary.vue";
+import LogoPrimary from "@/components/logo/LogoPrimary.vue";
+import LogoSecondary from "@/components/logo/LogoSecondary.vue";
 </script>
 
 <template>
