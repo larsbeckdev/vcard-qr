@@ -24,9 +24,7 @@ import {
       <!-- Content -->
       <n-layout-content class="layout-content">
         <n-scrollbar class="content-scroll">
-          <main class="main">
-            <router-view />
-          </main>
+          <router-view />
         </n-scrollbar>
       </n-layout-content>
 
@@ -67,17 +65,15 @@ import {
 /* CONTENT */
 .layout-content {
   position: relative;
-  padding-top: 64px; 
-  padding-bottom: 48px; 
+  padding-top: 64px;
+  padding-bottom: 48px;
   height: 100vh;
   overflow: hidden;
 }
 
-
 .content-scroll {
   height: calc(100vh - 64px - 48px);
 }
-
 
 .main {
   min-height: 100%;
