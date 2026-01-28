@@ -5,18 +5,16 @@ import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
 </script>
 
 <template>
-  <div class="site-header">
-    <div class="layout site-header-inner">
-      <div class="site-header-inner-left">
-        <div class="logo-box">
-          <LogoPrimary :width="30" />
-          <LogoSecondary :width="50" />
-        </div>
+  <div class="layout site-header-inner">
+    <div class="site-header-inner-left">
+      <div class="logo-box">
+        <LogoPrimary :width="30" />
+        <LogoSecondary :width="50" />
       </div>
+    </div>
 
-      <div class="site-header-inner-right">
-        <ThemeToggle />
-      </div>
+    <div class="site-header-inner-right">
+      <ThemeToggle />
     </div>
   </div>
 </template>
