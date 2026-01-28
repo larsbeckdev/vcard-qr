@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <img
-    src="@/assets/logo-dark.svg"
+    src="@/assets/png/vCard-QR.png"
     alt="vcard-qr logo"
     :style="{ width: typeof width === 'number' ? `${width}px` : width }"
     class="select-none" />
