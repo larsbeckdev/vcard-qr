@@ -1,7 +1,7 @@
 <script setup>
 import LogoPrimary from "@/components/logo/LogoPrimary.vue";
 import LogoSecondary from "@/components/logo/LogoSecondary.vue";
-import ThemeToggle from "@/features/toggle/ThemeToggle.vue";
+import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
 </script>
 
 <template>
