@@ -43,9 +43,9 @@ header {
 
 .logo-dm {
   width: 100%;
-  max-width: px;
-  height: 70px;
-  width: 70px;
+  max-width: 30px;
+  height: auto;
+  width: 30px;
 }
 
 .fotogram-full-svg-letter {
