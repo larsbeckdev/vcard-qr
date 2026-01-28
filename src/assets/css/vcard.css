@@ -9,12 +9,23 @@
 }
 
 /* =========================
+   Section
+========================= */
+
+.vcard-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
    Form
 ========================= */
 .vcard-form {
   display: grid;
   gap: 12px;
   margin-top: 16px;
+  width: 100%;
 }
 
 .form-group {
