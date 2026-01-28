@@ -24,7 +24,11 @@ import {
       <!-- Content -->
       <n-layout-content style="height: calc(100vh - 64px - 48px)">
         <n-scrollbar style="height: 100%">
-          <router-view />
+          <main>
+            <div class="main-inner">
+              <router-view />
+            </div>
+          </main>
         </n-scrollbar>
       </n-layout-content>
 
