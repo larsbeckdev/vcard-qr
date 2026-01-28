@@ -5,9 +5,8 @@ import {
   NDialogProvider,
   NNotificationProvider,
   NLoadingBarProvider,
+  NModalProvider, 
 } from "naive-ui";
-
-import { useThemeMode } from "@/app/composables/useThemeMode";
 </script>
 
 <template>
@@ -16,7 +15,9 @@ import { useThemeMode } from "@/app/composables/useThemeMode";
       <n-dialog-provider>
         <n-notification-provider>
           <n-message-provider>
-            <slot />
+            <n-modal-provider>
+              <slot />
+            </n-modal-provider>
           </n-message-provider>
         </n-notification-provider>
       </n-dialog-provider>
