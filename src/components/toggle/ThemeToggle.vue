@@ -1,5 +1,5 @@
 <script setup>
-import { toggleTheme } from "@/theme/themeMode";
+import { toggleTheme } from "@/app/theme/themeMode";
 </script>
 
 <template>
