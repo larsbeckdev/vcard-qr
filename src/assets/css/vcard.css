@@ -40,6 +40,13 @@
   gap: 12px;
 }
 
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* =========================
    Actions
 ========================= */
