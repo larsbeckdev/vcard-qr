@@ -79,6 +79,10 @@
   flex-direction: column;
 }
 
+.form-actions-header-title {
+  text-align: center;
+}
+
 /* =========================
    QR Preview
 ========================= */
