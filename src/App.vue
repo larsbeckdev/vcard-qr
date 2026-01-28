@@ -52,11 +52,6 @@ import LogoSecondary from "./components/LogoSecondary.vue";
       </section>
 
       <section class="section container vcard-section">
-        <!-- <p class="intro-text">
-            Mit einem Tap kannst du den Kontakt direkt als vCard speichern.
-            Funktioniert auf iPhone und Android.
-          </p> -->
-
         <form id="vcard-form" class="vcard-form">
           <div class="form-row">
             <div class="form-group">
