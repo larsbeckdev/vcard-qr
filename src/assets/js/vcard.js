@@ -158,6 +158,22 @@ function loadFromStorage() {
 }
 
 // ===== Export / Import =====
+
+// Nur diese Keys werden aus Import übernommen (Whitelist)
+const ALLOWED_KEYS = [
+  "firstName",
+  "lastName",
+  "org",
+  "title",
+  "phone",
+  "email",
+  "website",
+  "street",
+  "zip",
+  "city",
+  "country",
+];
+
 function downloadJson(filename, dataObj) {
   const blob = new Blob([JSON.stringify(dataObj, null, 2)], {
     type: "application/json",
@@ -180,18 +196,83 @@ function handleExport() {
   downloadJson(`vcardqr-${ts}.json`, data);
 }
 
-async function handleImportFile(file) {
-  const text = await file.text();
-  const data = JSON.parse(text);
+function pickAllowedFields(obj) {
+  const cleaned = {};
+  for (const k of ALLOWED_KEYS) {
+    if (k in obj) cleaned[k] = obj[k];
+  }
+  return cleaned;
+}
 
-  if (!data || typeof data !== "object") {
-    throw new Error("Invalid JSON structure");
+async function handleImportFile(file) {
+  // 1) Quick checks
+  if (!file) throw new Error("Keine Datei ausgewählt.");
+
+  const isJsonByType =
+    file.type === "application/json" || file.type === "text/json";
+  const isJsonByName = file.name.toLowerCase().endsWith(".json");
+
+  // Manche Browser liefern file.type leer -> deshalb Name-Check mitnehmen
+  if (!isJsonByType && !isJsonByName) {
+    throw new Error("Bitte eine .json Datei auswählen.");
   }
 
-  setFormData(data);
+  if (file.size === 0) {
+    throw new Error("Die Datei ist leer.");
+  }
+
+  // 2) Read + parse
+  let data;
+  try {
+    const text = await file.text();
+    data = JSON.parse(text);
+  } catch {
+    throw new Error("JSON ist ungültig (Parse-Fehler).");
+  }
+
+  // 3) Structure checks
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    throw new Error("JSON muss ein Objekt sein (z.B. { ... }).");
+  }
+
+  // Optional: minimal required fields (anpassen wie du willst)
+  // Wenn du KEINE Pflichtfelder willst, block einfach rausnehmen.
+  const hasAnyUsefulField = ALLOWED_KEYS.some((k) => k in data);
+  if (!hasAnyUsefulField) {
+    throw new Error("JSON enthält keine bekannten vCard-Felder.");
+  }
+
+  // 4) Apply (nur whitelisted keys)
+  const cleaned = pickAllowedFields(data);
+
+  setFormData(cleaned);
   saveToStorage();
   generateQR();
 }
+
+// ===== Events =====
+btnExport?.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleExport();
+});
+
+importFile?.addEventListener("change", async (e) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+
+  try {
+    await handleImportFile(file);
+  } catch (err) {
+    alert(
+      err?.message ||
+        "Import fehlgeschlagen. Bitte eine gültige JSON-Datei wählen.",
+    );
+    console.error(err);
+  } finally {
+    // allow importing same file again
+    e.target.value = "";
+  }
+});
 
 // ===== Events =====
 btnGenerate.addEventListener("click", (e) => {
