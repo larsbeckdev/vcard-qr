@@ -1,9 +1,7 @@
-// src/app/composables/useTheme.ts
 import { ref, computed, watch, watchEffect } from "vue";
 import { useOsTheme } from "naive-ui";
 
 export type ThemeMode = "auto" | "light" | "dark";
-
 const STORAGE_KEY = "ui:themeMode";
 
 function loadMode(): ThemeMode {
@@ -12,14 +10,13 @@ function loadMode(): ThemeMode {
   return "auto";
 }
 
+// ✅ singleton state
+const mode = ref<ThemeMode>(loadMode());
+
+watch(mode, (v) => localStorage.setItem(STORAGE_KEY, v));
+
 export function useTheme() {
   const osTheme = useOsTheme();
-
-  const mode = ref<ThemeMode>(loadMode());
-
-  watch(mode, (v) => {
-    localStorage.setItem(STORAGE_KEY, v);
-  });
 
   const resolved = computed<"light" | "dark">(() => {
     if (mode.value === "auto") return osTheme.value ?? "light";
@@ -32,9 +29,10 @@ export function useTheme() {
     document.documentElement.dataset.theme = resolved.value;
   });
 
-  function setMode(next: ThemeMode) {
-    mode.value = next;
-  }
-
-  return { mode, resolved, isDark, setMode };
+  return {
+    mode,
+    resolved,
+    isDark,
+    setMode: (v: ThemeMode) => (mode.value = v),
+  };
 }
