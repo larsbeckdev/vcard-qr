@@ -7,14 +7,15 @@ import {
   NLoadingBarProvider,
   NModalProvider,
   darkTheme,
-  useOsTheme,
 } from "naive-ui";
 
 import { computed } from "vue";
 import { themeOverrides } from "@/app/theme";
+import { useTheme } from "@/app/composables/useTheme";
 
-const osTheme = useOsTheme(); // "light" | "dark"
-const theme = computed(() => (osTheme.value === "dark" ? darkTheme : null));
+const { isDark } = useTheme();
+
+const theme = computed(() => (isDark.value ? darkTheme : null));
 </script>
 
 <template>
