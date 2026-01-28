@@ -58,13 +58,18 @@
   padding: 32px;
 }
 
-button {
+/* button {
   padding: 10px 14px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-}
+} */
 
+@media (max-width: 576px) {
+  .form-actions {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 /* =========================
