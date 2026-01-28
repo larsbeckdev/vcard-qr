@@ -17,7 +17,14 @@ import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
 
       <div class="site-header-inner-right">
         <div class="dark-mode-toggle-box">
-
+          <ThemeToggle />
+          <button
+            onclick="toggleTheme()"
+            id="theme-toggle"
+            type="button"
+            aria-label="Theme umschalten">
+            Theme wechseln
+          </button>
         </div>
       </div>
     </div>
