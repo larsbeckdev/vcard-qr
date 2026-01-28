@@ -56,6 +56,10 @@ import {
 .layout-footer {
   height: var(--footer-h);
   position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 /* CONTENT */
@@ -75,16 +79,8 @@ import {
   overflow: hidden;
 }
 
-
-
 /* FOOTER */
 .layout-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 48px;
-  z-index: 100;
 }
 
 /* CONTENT */
