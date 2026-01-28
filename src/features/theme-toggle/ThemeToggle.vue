@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, h } from "vue";
 import { NButton, NDropdown } from "naive-ui";
-import { Monitor, Sun, Moon, ChevronDown } from "lucide-vue-next";
+import { Monitor, Sun, Moon } from "lucide-vue-next";
 import { useTheme, type ThemeMode } from "@/app/composables/useTheme";
 
 type Props = {
@@ -57,7 +57,6 @@ function handleSelect(key: string | number) {
       <span v-if="props.showLabel" style="margin: 0 8px">
         {{ currentLabel }}
       </span>
-      <ChevronDown :size="16" />
     </n-button>
   </n-dropdown>
 </template>
