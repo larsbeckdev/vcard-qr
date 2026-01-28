@@ -148,8 +148,6 @@ import LogoSecondary from "@/components/logo/LogoSecondary.vue";
           </div>
         </form>
       </section>
-
-     
     </div>
   </main>
 
