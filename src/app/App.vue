@@ -33,11 +33,14 @@ import {
           </n-scrollbar>
         </n-layout-content>
       </main>
-      
+
       <!-- Footer -->
-      <n-layout-footer bordered style="height: 48px">
-        <Footer />
-      </n-layout-footer>
+
+      <footer>
+        <n-layout-footer bordered style="height: 48px">
+          <Footer />
+        </n-layout-footer>
+      </footer>
     </n-layout>
   </UiProvider>
 </template>
