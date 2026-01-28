@@ -17,22 +17,7 @@ import UiProvider from "@/app/providers/UiProvider.vue";
     </main>
   </UiProvider>
   <!-- --------------- HEADER ------------------ -->
-  <header class="site-header">
-    <div class="layout site-header-inner">
-      <div class="site-header-inner-left">
-        <div class="logo-box">
-          <LogoPrimary :width="30" />
-          <!-- <LogoSecondary :width="50" /> -->
-        </div>
-      </div>
-
-      <div class="site-header-inner-right">
-        <div class="dark-mode-toggle-box">
-          <ThemeToggle />
-        </div>
-      </div>
-    </div>
-  </header>
+  
 
   <!-- --------------- FOOTER ------------------ -->
   <footer class="site-footer">
