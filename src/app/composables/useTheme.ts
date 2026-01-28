@@ -2,7 +2,7 @@ import { ref, computed, watch, watchEffect } from "vue";
 import { useOsTheme } from "naive-ui";
 
 export type ThemeMode = "auto" | "light" | "dark";
-const STORAGE_KEY = "ui:themeMode";
+const STORAGE_KEY = "theme";
 
 function loadMode(): ThemeMode {
   const raw = localStorage.getItem(STORAGE_KEY);
@@ -10,7 +10,6 @@ function loadMode(): ThemeMode {
   return "auto";
 }
 
-// ✅ singleton state
 const mode = ref<ThemeMode>(loadMode());
 
 watch(mode, (v) => localStorage.setItem(STORAGE_KEY, v));
