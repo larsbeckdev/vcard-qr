@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { NConfigProvider, darkTheme } from "naive-ui";
-import { useThemeStore } from "@/shared/theme/theme.store";
+import { useThemeStore } from "@/app/theme/theme.store";
 
 const { isDark } = useThemeStore();
 
