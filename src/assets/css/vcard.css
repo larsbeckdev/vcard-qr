@@ -119,6 +119,7 @@
 ========================= */
 .vcard-debug {
   margin-top: 6px;
+  display: none;
 }
 
 .vcard-debug pre {
