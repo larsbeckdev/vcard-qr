@@ -6,12 +6,6 @@ function isDark(): boolean {
   return document.documentElement.classList.contains("dark");
 }
 
-/**
- * Komposable für:
- * - theme: darkTheme oder null
- * - overrides: aus CSS Variablen
- * - auto-sync bei html.dark toggles
- */
 export function useNaiveTheme() {
   const theme = ref<GlobalTheme | null>(null);
   const overrides = ref(createNaiveThemeOverrides());
