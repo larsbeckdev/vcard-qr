@@ -46,7 +46,6 @@
   }
 }
 
-
 /* =========================
    Actions
 ========================= */
@@ -80,16 +79,6 @@
   flex-direction: column;
 }
 
-
-/* @media (max-width: 576px) {
-  .form-actions {
-    flex-direction: column;
-  }
-} */
-
-
-
-
 /* =========================
    QR Preview
 ========================= */
@@ -112,7 +101,7 @@
 }
 
 .qr-box img {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 .qr-download {
