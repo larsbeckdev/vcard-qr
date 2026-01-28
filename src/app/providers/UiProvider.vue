@@ -8,12 +8,10 @@ import {
   NModalProvider,
 } from "naive-ui";
 
-import { computed } from "vue";
-import { getTheme, themeOverrides } from "@/app/theme";
+import { themeOverrides } from "@/app/theme";
+import { useTheme } from "@/app/composables/useTheme";
 
-const isDark = false;
-
-const theme = computed(() => getTheme(isDark));
+const { theme } = useTheme();
 </script>
 
 <template>
