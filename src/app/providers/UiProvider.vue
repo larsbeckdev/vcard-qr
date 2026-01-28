@@ -7,13 +7,12 @@ import {
   NLoadingBarProvider,
 } from "naive-ui";
 
-import { useUiTheme } from "@/app/composables/useUiTheme";
+import { useThemeMode } from "@/app/composables/useThemeMode";
 
-const { theme, themeOverrides } = useUiTheme();
 </script>
 
 <template>
-  <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
+  <n-config-provider>
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-notification-provider>
