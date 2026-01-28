@@ -10,7 +10,7 @@ import {
 
 import { computed } from "vue";
 import { getTheme } from "@/app/theme/theme";
-import { themeOverrides } from "@/app/theme/naive-overrides";
+import { themeOverrides } from "@/app/theme/overrides";
 
 const isDark = false;
 const theme = computed(() => getTheme(isDark));
