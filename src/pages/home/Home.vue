@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="main-inner">
+  
     <section class="container header-section">
       <h1>vCard → QR</h1>
     </section>
@@ -112,7 +112,6 @@
         </div>
       </form>
     </section>
-  </div>
 </template>
 
 <style scoped></style>
