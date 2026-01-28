@@ -15,8 +15,16 @@ Gebaut mit **Vite** als Build-Tool und **Vue 3** für komponentenbasierte UI.
 
 ---
 
-## 📦 Installation
+## 📦 Install
 
 ```bash
 npm install
-,
+
+```
+
+## Build
+
+```bash
+npm build
+
+```
