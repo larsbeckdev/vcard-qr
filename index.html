@@ -58,6 +58,93 @@
             Android: vCard öffnen → „Importieren“
           </p>
         </section>
+
+        <form
+          id="vcard-form"
+          style="display: grid; gap: 12px; margin-top: 16px">
+          <div style="display: grid; gap: 6px">
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" autocomplete="given-name" />
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="lastName">Last name</label>
+            <input id="lastName" name="lastName" autocomplete="family-name" />
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="org">Company</label>
+            <input id="org" name="org" autocomplete="organization" />
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="title">Job title</label>
+            <input id="title" name="title" autocomplete="organization-title" />
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" autocomplete="tel" />
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="email">Email</label>
+            <input id="email" name="email" autocomplete="email" />
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="website">Website</label>
+            <input id="website" name="website" autocomplete="url" />
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="street">Street</label>
+            <input id="street" name="street" autocomplete="street-address" />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+            <div style="display: grid; gap: 6px">
+              <label for="zip">ZIP</label>
+              <input id="zip" name="zip" autocomplete="postal-code" />
+            </div>
+            <div style="display: grid; gap: 6px">
+              <label for="city">City</label>
+              <input id="city" name="city" autocomplete="address-level2" />
+            </div>
+          </div>
+
+          <div style="display: grid; gap: 6px">
+            <label for="country">Country</label>
+            <input id="country" name="country" autocomplete="country-name" />
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-top: 8px">
+            <button type="button" id="btn-generate">Generate QR</button>
+            <button type="button" id="btn-clear">Clear</button>
+          </div>
+        </form>
+
+        <section style="margin-top: 24px; display: grid; gap: 12px">
+          <h2>QR Preview</h2>
+          <div
+            id="qr"
+            style="
+              width: 260px;
+              height: 260px;
+              display: grid;
+              place-items: center;
+              border: 1px solid #ddd;
+              border-radius: 12px;
+            "></div>
+          <a id="download" style="display: none" download="vcard-qr.png"
+            >Download PNG</a
+          >
+
+          <details style="margin-top: 6px">
+            <summary>vCard text (debug)</summary>
+            <pre id="vcardText" style="white-space: pre-wrap"></pre>
+          </details>
+        </section>
       </div>
     </main>
 
@@ -65,91 +152,6 @@
       class="layout"
       style="max-width: 860px; margin: 0 auto; padding: 24px">
       <h1>vCard → QR</h1>
-
-      <form id="vcard-form" style="display: grid; gap: 12px; margin-top: 16px">
-        <div style="display: grid; gap: 6px">
-          <label for="firstName">First name</label>
-          <input id="firstName" name="firstName" autocomplete="given-name" />
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="lastName">Last name</label>
-          <input id="lastName" name="lastName" autocomplete="family-name" />
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="org">Company</label>
-          <input id="org" name="org" autocomplete="organization" />
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="title">Job title</label>
-          <input id="title" name="title" autocomplete="organization-title" />
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" autocomplete="tel" />
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="email">Email</label>
-          <input id="email" name="email" autocomplete="email" />
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="website">Website</label>
-          <input id="website" name="website" autocomplete="url" />
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="street">Street</label>
-          <input id="street" name="street" autocomplete="street-address" />
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
-          <div style="display: grid; gap: 6px">
-            <label for="zip">ZIP</label>
-            <input id="zip" name="zip" autocomplete="postal-code" />
-          </div>
-          <div style="display: grid; gap: 6px">
-            <label for="city">City</label>
-            <input id="city" name="city" autocomplete="address-level2" />
-          </div>
-        </div>
-
-        <div style="display: grid; gap: 6px">
-          <label for="country">Country</label>
-          <input id="country" name="country" autocomplete="country-name" />
-        </div>
-
-        <div style="display: flex; gap: 10px; margin-top: 8px">
-          <button type="button" id="btn-generate">Generate QR</button>
-          <button type="button" id="btn-clear">Clear</button>
-        </div>
-      </form>
-
-      <section style="margin-top: 24px; display: grid; gap: 12px">
-        <h2>QR Preview</h2>
-        <div
-          id="qr"
-          style="
-            width: 260px;
-            height: 260px;
-            display: grid;
-            place-items: center;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-          "></div>
-        <a id="download" style="display: none" download="vcard-qr.png"
-          >Download PNG</a
-        >
-
-        <details style="margin-top: 6px">
-          <summary>vCard text (debug)</summary>
-          <pre id="vcardText" style="white-space: pre-wrap"></pre>
-        </details>
-      </section>
     </main>
 
     <!-- --------------- FOOTER ------------------ -->
