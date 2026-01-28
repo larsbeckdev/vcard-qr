@@ -3,5 +3,7 @@ import { toggleTheme } from "@/app/theme/themeMode";
 </script>
 
 <template>
-  <button @click="toggleTheme">Theme wechseln</button>
+  <button type="button" id="theme-toggle" class="btn" @click="toggleTheme">
+    Theme wechseln
+  </button>
 </template>
