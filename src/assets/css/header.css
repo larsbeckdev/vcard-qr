@@ -36,9 +36,9 @@ header {
 
 .logo {
   width: 100%;
-  max-width: 250px;
-  height: 70px;
-  width: 70px;
+  max-width: 50px;
+  height: auto;
+  width: 50px;
 }
 
 .logo-dm {
