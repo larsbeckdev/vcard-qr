@@ -18,3 +18,20 @@ import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
     </div>
   </div>
 </template>
+
+<style scoped>
+.layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.site-header-inner-right {
+}
+</style>
