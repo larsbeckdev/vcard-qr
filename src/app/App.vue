@@ -36,6 +36,13 @@ import {
   </UiProvider>
 </template>
 
+<style>
+:root {
+  --header-h: 64px;
+  --footer-h: 48px;
+}
+</style>
+
 <style scoped>
 :root {
   --header-h: 64px;
