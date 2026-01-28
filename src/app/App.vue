@@ -9,17 +9,12 @@ import UiProvider from "@/app/providers/UiProvider.vue";
 
 <template>
   <UiProvider>
-
-
-    
     <!-- --------------- MAIN ------------------ -->
     <main>
       <div class="main-inner">
         <router-view />
       </div>
     </main>
-
-
   </UiProvider>
   <!-- --------------- HEADER ------------------ -->
   <header class="site-header">
