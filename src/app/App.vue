@@ -66,6 +66,11 @@ import {
 .layout-content {
   padding-top: var(--header-h);
   padding-bottom: var(--footer-h);
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 48px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* SCROLL */
