@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import type { UploadFileInfo } from "naive-ui";
+import type { UploadFileInfo, UploadInst } from "naive-ui";
 import {
   NCard,
   NSpace,
@@ -26,6 +26,9 @@ const emit = defineEmits<{
 const exportName = props.exportFilename ?? "vcard-data.json";
 const raw = ref("");
 
+/* ⭐ Upload ref */
+const uploadRef = ref<UploadInst | null>(null);
+
 // ---------- Export ----------
 function downloadExport() {
   const json = props.exportJson();
@@ -48,8 +51,11 @@ async function handleFileChange(options: { file: UploadFileInfo }) {
   if (!f) return;
 
   const text = await f.text();
-  raw.value = text; // ersetzt den Inhalt (nicht append)
-  emit("import-json", text); // triggert deinen Import
+  raw.value = text;
+  emit("import-json", text);
+
+  // ⭐ wichtig: Upload zurücksetzen → erneute Auswahl möglich
+  uploadRef.value?.clear();
 }
 
 // ---------- Clear (nur Textarea) ----------
@@ -64,9 +70,9 @@ function clearTextarea() {
       <n-button @click="downloadExport">Download JSON</n-button>
       <n-button secondary @click="exportToTextarea">Export → Text</n-button>
       <n-button secondary @click="importFromTextarea">Import ← Text</n-button>
-      <n-button type="warning" secondary @click="clearTextarea"
-        >Clear Text</n-button
-      >
+      <n-button type="warning" secondary @click="clearTextarea">
+        Clear Text
+      </n-button>
     </n-space>
 
     <div style="margin-top: 12px">
@@ -79,17 +85,18 @@ function clearTextarea() {
 
     <div style="margin-top: 16px">
       <n-upload
+        ref="uploadRef"
         accept=".json,application/json"
         :max="1"
         :default-upload="false"
         :show-file-list="false"
         @change="handleFileChange">
         <n-upload-dragger>
-          <n-text style="font-size: 16px"
-            >Click or drag a JSON file here</n-text
-          >
+          <n-text style="font-size: 16px">
+            Click or drag a JSON file here
+          </n-text>
           <n-p depth="3" style="margin-top: 8px">
-            Imports your vCard form data from a local .json file.
+            You can select another file immediately if the first one was wrong.
           </n-p>
         </n-upload-dragger>
       </n-upload>
