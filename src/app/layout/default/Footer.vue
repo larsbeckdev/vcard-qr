@@ -1,11 +1,11 @@
 <script setup></script>
 
 <template>
-    <p>&copy; 2026 vCard-QR. All rights reserved.</p>
+  <p class="copyright-text">&copy; 2026 vCard-QR. All rights reserved.</p>
 </template>
 
 <style scoped>
-.site-footer {
+.copyright-text {
   height: 100%;
   display: flex;
   align-items: center;
