@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import {
   NConfigProvider,
   NMessageProvider,
@@ -7,15 +8,16 @@ import {
   NLoadingBarProvider,
   NModalProvider,
   darkTheme,
+  lightTheme,
 } from "naive-ui";
 
-import { computed } from "vue";
-import { themeOverrides } from "@/app/theme";
+import { getNaiveOverrides } from "@/app/theme"; // <- neu (oder aus theme.ts)
 import { useTheme } from "@/app/composables/useTheme";
 
 const { isDark } = useTheme();
 
-const theme = computed(() => (isDark.value ? darkTheme : null));
+const theme = computed(() => (isDark.value ? darkTheme : lightTheme));
+const themeOverrides = computed(() => getNaiveOverrides(isDark.value));
 </script>
 
 <template>
