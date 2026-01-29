@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import { computed } from "vue";
 import {
@@ -45,8 +44,7 @@ const pngName = computed(() => {
           tag="a"
           :href="qrDataUrl || undefined"
           :download="pngName"
-          :disabled="!qrDataUrl"
-        >
+          :disabled="!qrDataUrl">
           Download QR (PNG)
         </n-button>
       </n-space>
