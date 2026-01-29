@@ -34,7 +34,10 @@ import {
 
       <!-- Footer -->
       <n-layout-footer bordered class="layout-footer">
-        <Footer />
+        <div
+          class="layout-footer-inner flex h-full align-center justify-center">
+          <Footer />
+        </div>
       </n-layout-footer>
     </n-layout>
   </UiProvider>
