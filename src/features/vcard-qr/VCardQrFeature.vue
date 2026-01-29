@@ -59,7 +59,7 @@ function safeImport(raw: string) {
 
     <!-- vCard Form -->
     <n-grid-item>
-      <VCardForm v-model="data" />
+      <VCardForm v-model="data" @clear="clearAll" />
     </n-grid-item>
 
     <!-- Import / Export Panel -->
