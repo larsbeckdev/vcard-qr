@@ -10,23 +10,24 @@ export const tokensDark = {
   },
 
   colors: {
-    /* Brand / Action */
-    primary: "#f97316", // orange-500
-    primaryHover: "#fb923c", // orange-400
-    primaryPressed: "#ea580c", // orange-600
+    /* Brand */
+    primary: "#f97316",
+    primaryHover: "#fdba74", // softer, wärmer
+    primaryPressed: "#c2410c", // tiefer, weniger knallig
 
     /* Text */
-    textBase: "#e5e7eb", // gray-200 (angenehmer als reines Weiß)
-    textMuted: "#9ca3af", // gray-400
+    textBase: "#f1f5f9", // sehr hell, aber nicht reinweiß
+    textMuted: "#94a3b8", // slate-400
+    textDisabled: "#64748b", // slate-500
 
-    /* Backgrounds */
-    bodyBg: "#0b0f14", // leicht blau-grau statt rein schwarz
-    cardBg: "#111827", // gray-900 → sauberer Kontrast
-    cardBgElevated: "#1f2933", // für Hover / aktive Cards
+    /* Surfaces */
+    bodyBg: "#0a0a0b", // fast schwarz, leicht neutral
+    cardBg: "#141417", // graphite-look
+    cardBgElevated: "#1c1c21", // Hover / Active
 
-    /* Borders / Dividers */
-    border: "#1f2937", // gray-800
-    borderStrong: "#374151", // gray-700
+    /* Borders */
+    border: "#26262b",
+    borderStrong: "#3f3f46",
   },
 } as const;
 
