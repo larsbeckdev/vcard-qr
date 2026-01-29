@@ -15,3 +15,18 @@ export type VCardData = {
 
   note: string;
 };
+
+const emptyVCard = (): VCardData => ({
+  firstName: "",
+  lastName: "",
+  org: "",
+  title: "",
+  phone: "",
+  email: "",
+  website: "",
+  street: "",
+  zip: "",
+  city: "",
+  country: "",
+  note: "",
+});
