@@ -1,9 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="site-footer">
     <p>&copy; 2026 vCard-QR. All rights reserved.</p>
-  </div>
 </template>
 
 <style scoped>
