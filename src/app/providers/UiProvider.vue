@@ -11,7 +11,7 @@ import {
   lightTheme,
 } from "naive-ui";
 
-import { getNaiveOverrides } from "@/app/theme"; // <- neu (oder aus theme.ts)
+import { getNaiveOverrides } from "@/app/theme"; 
 import { useTheme } from "@/app/composables/useTheme";
 
 const { isDark } = useTheme();
