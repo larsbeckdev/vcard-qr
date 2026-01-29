@@ -5,7 +5,7 @@ import ThemeToggle from "@/features/theme-toggle/ThemeToggle.vue";
 </script>
 
 <template>
-  <div class="logo-box flex align-center gap-2 w-full">
+  <div class="logo-box flex align-center gap-2 w-8">
     <LogoPrimary :width="30" />
     <LogoSecondary :width="50" />
   </div>
