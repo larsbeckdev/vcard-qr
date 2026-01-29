@@ -16,96 +16,97 @@ import {
 <template>
   <UiProvider>
     <n-layout class="app-layout">
-      <!-- Header -->
-      <n-layout-header
-        bordered
-        class="layout-header flex align-center justify-between mx-auto my-0">
-        <Header />
+      <!-- HEADER BAR (full width) -->
+      <n-layout-header bordered class="layout-header">
+        <div class="container header-inner">
+          <Header />
+        </div>
       </n-layout-header>
 
-      <!-- Content -->
+      <!-- CONTENT (scroll area) -->
       <n-layout-content class="layout-content">
         <n-scrollbar class="content-scroll">
-          <div class="content-inner">
+          <div class="container content-inner">
             <router-view />
           </div>
         </n-scrollbar>
       </n-layout-content>
 
-      <!-- Footer -->
-      <n-layout-footer
-        bordered
-        class="layout-footer flex justify-center items-center">
-        <Footer />
+      <!-- FOOTER BAR (full width) -->
+      <n-layout-footer bordered class="layout-footer">
+        <div class="container footer-inner">
+          <Footer />
+        </div>
       </n-layout-footer>
     </n-layout>
   </UiProvider>
 </template>
 
-<style>
-:root {
-  --header-h: 64px;
-  --footer-h: 48px;
-}
-</style>
-
 <style scoped>
 .app-layout {
   --header-h: 64px;
   --footer-h: 48px;
+  --container-w: 980px;
 
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden; /* wichtig: body soll nicht scrollen */
 }
 
-/* HEADER */
+/* --- shared container --- */
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* --- header/footer are full width fixed bars --- */
 .layout-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0; /* top:0 left:0 right:0 */
   height: var(--header-h);
   z-index: 100;
+  display: flex;
+  align-items: center;
 }
 
-.layout-header-inner {
-  height: 100%;
+.layout-footer {
+  position: fixed;
+  inset: auto 0 0 0; /* bottom:0 left:0 right:0 */
+  height: var(--footer-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+/* optional: inner alignment */
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  max-width: 980px;
-  margin: 0 auto;
+  height: 100%;
 }
 
-/* FOOTER */
-.layout-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: var(--footer-h);
-  z-index: 100;
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-/* CONTENT */
+/* --- content area between header/footer --- */
 .layout-content {
   height: 100vh;
   padding-top: var(--header-h);
   padding-bottom: var(--footer-h);
-  overflow: hidden;
+  overflow: hidden; /* wichtig */
 }
 
-/* SCROLL AREA */
 .content-scroll {
   height: calc(100vh - var(--header-h) - var(--footer-h));
 }
 
-/* CENTERED INNER */
 .content-inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 24px;
+  padding: 24px 16px; /* top/bottom spacing inside content */
 }
 </style>
