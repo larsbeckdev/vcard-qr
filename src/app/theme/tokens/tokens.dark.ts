@@ -7,7 +7,7 @@ export const tokensDark = {
     primaryPressed: "#ea580c",
 
     textBase: "#ffffff",
-    bodyBg: "#0f172a",
+    bodyBg: "#0e0f0fff",
     cardBg: "#020617",
     border: "#1e293b",
   },
