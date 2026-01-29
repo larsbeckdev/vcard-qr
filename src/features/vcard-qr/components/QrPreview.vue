@@ -51,7 +51,7 @@ const emit = defineEmits<{
             :src="qrDataUrl"
             alt="vCard QR"
             :preview-disabled="true"
-            width="160" />
+            width="240" />
           <div v-else class="empty">No QR yet</div>
         </div>
       </n-card>
@@ -85,7 +85,7 @@ const emit = defineEmits<{
     grid-template-columns: 1fr;
   }
   .qrBox {
-    min-height: 20px;
+    min-height: 220px;
   }
 }
 </style>
