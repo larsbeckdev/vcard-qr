@@ -44,7 +44,7 @@ import {
 
 <style scoped>
 .app-layout {
-  --header-h: 64px;
+  --header-h: 54px;
   --footer-h: 48px;
   --container-w: 980px;
 
