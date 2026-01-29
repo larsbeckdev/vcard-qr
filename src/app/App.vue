@@ -44,7 +44,6 @@ import {
 </style>
 
 <style scoped>
-/* Variablen NICHT auf :root in scoped */
 .app-layout {
   --header-h: 64px;
   --footer-h: 48px;
