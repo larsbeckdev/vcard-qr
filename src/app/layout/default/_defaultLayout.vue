@@ -17,10 +17,10 @@ import {
   <UiProvider>
     <n-layout class="app-layout">
       <!-- Header -->
-      <n-layout-header bordered class="layout-header">
-        <div class="layout-header-inner h-full">
-          <Header />
-        </div>
+      <n-layout-header
+        bordered
+        class="layout-header flex align-center justify-between">
+        <Header />
       </n-layout-header>
 
       <!-- Content -->
@@ -33,8 +33,10 @@ import {
       </n-layout-content>
 
       <!-- Footer -->
-      <n-layout-footer bordered class="layout-footer flex justify-center items-center">
-          <Footer />
+      <n-layout-footer
+        bordered
+        class="layout-footer flex justify-center items-center">
+        <Footer />
       </n-layout-footer>
     </n-layout>
   </UiProvider>
