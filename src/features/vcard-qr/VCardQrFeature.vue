@@ -51,6 +51,13 @@ function safeImport(raw: string) {
     <n-grid-item>
       <n-grid :cols="1" :y-gap="12">
         <n-grid-item>
+          <ImportExportPanel
+            :export-json="exportJson"
+            @import-json="safeImport"
+            @clear="clearAll" />
+        </n-grid-item>
+
+        <n-grid-item>
           <QrPreview
             :qr-data-url="qrDataUrl"
             :vcard-text="vcardText"
@@ -59,13 +66,6 @@ function safeImport(raw: string) {
             :error="qrError"
             @download-vcf="downloadVcf"
             @regenerate="generateQr" />
-        </n-grid-item>
-
-        <n-grid-item>
-          <ImportExportPanel
-            :export-json="exportJson"
-            @import-json="safeImport"
-            @clear="clearAll" />
         </n-grid-item>
       </n-grid>
     </n-grid-item>
