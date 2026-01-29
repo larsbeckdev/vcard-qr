@@ -8,7 +8,7 @@ export const tokens = {
     weightSemibold: "600",
   },
   common: {
-    bodyColor: "#0f0f0f",
+    bodyColor: "#962828ff",
     textColorBase: "#fff",
   },
   colors: {
