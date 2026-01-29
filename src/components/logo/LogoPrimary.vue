@@ -7,7 +7,11 @@ defineProps({
 });
 </script>
 
+
 <template>
+  <router-link to="https://example.com" class="logo-link">
+    Text
+  </router-link>
   <img
     src="@/assets/png/logo.png"
     alt="vcard-qr logo"
