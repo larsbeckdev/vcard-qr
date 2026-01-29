@@ -30,16 +30,10 @@ function update<K extends keyof VCardData>(key: K, value: VCardData[K]) {
 
 <template>
   <n-card title="Contact" size="medium">
-    <template #header-extra>
-      <n-button type="error" secondary @click="emit('clear')">Clear</n-button>
-    </template>
+    <n-button type="error" secondary @click="emit('clear')">Clear</n-button>
 
     <n-form :model="model" label-placement="top">
-      <!-- ... dein Inhalt bleibt wie er ist ... --><n-grid
-        :cols="2"
-        :x-gap="12"
-        :y-gap="12"
-        responsive="screen">
+      <n-grid :cols="2" :x-gap="12" :y-gap="12" responsive="screen">
         <n-grid-item>
           <n-form-item label="First name">
             <n-input
