@@ -37,7 +37,7 @@ function safeImport(raw: string) {
   <n-page-header
     title="vCard → QR"
     subtitle="Generate a QR code that encodes a vCard and download .vcf" 
-    class="flex justify-center "/>
+    class="flex justify-center align-center h-12 text-center "/>
 
   <n-grid
     :cols="1"
