@@ -85,7 +85,7 @@ const emit = defineEmits<{
     grid-template-columns: 1fr;
   }
   .qrBox {
-    min-height: 220px;
+    min-height: 20px;
   }
 }
 </style>
