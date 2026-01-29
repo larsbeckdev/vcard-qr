@@ -19,7 +19,7 @@ import {
       <!-- Header -->
       <n-layout-header
         bordered
-        class="layout-header flex align-center justify-between">
+        class="layout-header flex align-center justify-between mx-auto my-0">
         <Header />
       </n-layout-header>
 
