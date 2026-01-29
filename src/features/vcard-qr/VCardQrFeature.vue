@@ -44,10 +44,25 @@ function safeImport(raw: string) {
     :y-gap="12"
     responsive="screen"
     style="margin-top: 12px">
+
+    <!-- QR Preview -->
+    <n-grid-item>
+      <QrPreview
+        :qr-data-url="qrDataUrl"
+        :vcard-text="vcardText"
+        :filename="filename"
+        :is-generating="isGenerating"
+        :error="qrError"
+        @download-vcf="downloadVcf"
+        @regenerate="generateQr" />
+    </n-grid-item>
+
+    <!-- vCard Form -->
     <n-grid-item>
       <VCardForm v-model="data" />
     </n-grid-item>
 
+    <!-- Import / Export Panel -->
     <n-grid-item>
       <n-grid :cols="1" :y-gap="12">
         <n-grid-item>
@@ -55,17 +70,6 @@ function safeImport(raw: string) {
             :export-json="exportJson"
             @import-json="safeImport"
             @clear="clearAll" />
-        </n-grid-item>
-
-        <n-grid-item>
-          <QrPreview
-            :qr-data-url="qrDataUrl"
-            :vcard-text="vcardText"
-            :filename="filename"
-            :is-generating="isGenerating"
-            :error="qrError"
-            @download-vcf="downloadVcf"
-            @regenerate="generateQr" />
         </n-grid-item>
       </n-grid>
     </n-grid-item>
