@@ -24,8 +24,8 @@ const themeOverrides = computed(() => getNaiveOverrides(isDark.value));
   <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
     <n-loading-bar-provider>
       <n-dialog-provider>
-        <n-notification-provider placement="bottom">
-          <n-message-provider placement="bottom">
+        <n-notification-provider>
+          <n-message-provider>
             <n-modal-provider>
               <slot />
             </n-modal-provider>
