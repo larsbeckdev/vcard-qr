@@ -26,7 +26,9 @@ import {
       <!-- Content -->
       <n-layout-content class="layout-content">
         <n-scrollbar class="content-scroll">
-          <router-view />
+          <div class="content-inner">
+            <router-view />
+          </div>
         </n-scrollbar>
       </n-layout-content>
 
@@ -62,6 +64,16 @@ import {
   right: 0;
   height: var(--header-h);
   z-index: 100;
+}
+
+.layout-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 /* FOOTER */
