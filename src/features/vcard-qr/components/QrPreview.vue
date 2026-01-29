@@ -1,4 +1,6 @@
+
 <script setup lang="ts">
+import { computed } from "vue";
 import {
   NCard,
   NSpace,
@@ -10,7 +12,7 @@ import {
   NSpin,
 } from "naive-ui";
 
-defineProps<{
+const props = defineProps<{
   qrDataUrl: string;
   vcardText: string;
   filename: string;
@@ -22,6 +24,11 @@ const emit = defineEmits<{
   (e: "download-vcf"): void;
   (e: "regenerate"): void;
 }>();
+
+const pngName = computed(() => {
+  const base = props.filename.replace(/\.vcf$/i, "") || "qr";
+  return `${base}.png`;
+});
 </script>
 
 <template>
@@ -29,8 +36,18 @@ const emit = defineEmits<{
     <n-space justify="space-between" align="center">
       <n-space>
         <n-button @click="emit('regenerate')">Regenerate</n-button>
+
         <n-button type="primary" @click="emit('download-vcf')">
           Download {{ filename }}
+        </n-button>
+
+        <n-button
+          tag="a"
+          :href="qrDataUrl || undefined"
+          :download="pngName"
+          :disabled="!qrDataUrl"
+        >
+          Download QR (PNG)
         </n-button>
       </n-space>
 
