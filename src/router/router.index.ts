@@ -1,6 +1,6 @@
 import { createRouter, createMemoryHistory } from "vue-router";
 
-import DefaultLayout from "@/app/layout/_defaultLayout.vue";
+import DefaultLayout from "@/app/layout/DefaultLayout.vue";
 import Home from "@/pages/home/Home.vue";
 
 const routes = [
