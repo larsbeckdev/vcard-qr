@@ -51,7 +51,7 @@ const emit = defineEmits<{
             :src="qrDataUrl"
             alt="vCard QR"
             :preview-disabled="true"
-            width="240" />
+            width="160" />
           <div v-else class="empty">No QR yet</div>
         </div>
       </n-card>
