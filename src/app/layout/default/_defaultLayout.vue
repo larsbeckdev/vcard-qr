@@ -49,10 +49,9 @@ import {
   --container-w: 980px;
 
   height: 100vh;
-  overflow: hidden; /* wichtig: body soll nicht scrollen */
+  overflow: hidden;
 }
 
-/* --- shared container --- */
 .container {
   max-width: var(--container-w);
   margin: 0 auto;
@@ -60,10 +59,9 @@ import {
   padding: 0 16px;
 }
 
-/* --- header/footer are full width fixed bars --- */
 .layout-header {
   position: fixed;
-  inset: 0 0 auto 0; /* top:0 left:0 right:0 */
+  inset: 0 0 auto 0;
   height: var(--header-h);
   z-index: 100;
   display: flex;
@@ -72,14 +70,13 @@ import {
 
 .layout-footer {
   position: fixed;
-  inset: auto 0 0 0; /* bottom:0 left:0 right:0 */
+  inset: auto 0 0 0;
   height: var(--footer-h);
   z-index: 100;
   display: flex;
   align-items: center;
 }
 
-/* optional: inner alignment */
 .header-inner {
   display: flex;
   align-items: center;
@@ -94,12 +91,11 @@ import {
   height: 100%;
 }
 
-/* --- content area between header/footer --- */
 .layout-content {
   height: 100vh;
   padding-top: var(--header-h);
   padding-bottom: var(--footer-h);
-  overflow: hidden; /* wichtig */
+  overflow: hidden;
 }
 
 .content-scroll {
@@ -107,6 +103,6 @@ import {
 }
 
 .content-inner {
-  padding: 24px 16px; /* top/bottom spacing inside content */
+  padding: 24px 16px;
 }
 </style>
