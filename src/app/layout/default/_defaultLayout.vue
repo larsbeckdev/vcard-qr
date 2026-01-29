@@ -18,7 +18,9 @@ import {
     <n-layout class="app-layout">
       <!-- Header -->
       <n-layout-header bordered class="layout-header">
-        <Header />
+        <div>
+          <Header />
+        </div>
       </n-layout-header>
 
       <!-- Content -->
