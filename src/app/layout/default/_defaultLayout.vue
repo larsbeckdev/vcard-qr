@@ -33,10 +33,8 @@ import {
       </n-layout-content>
 
       <!-- Footer -->
-      <n-layout-footer bordered class="layout-footer">
-        <div class="layout-footer-inner flex justify-center items-center">
+      <n-layout-footer bordered class="layout-footer flex justify-center items-center">
           <Footer />
-        </div>
       </n-layout-footer>
     </n-layout>
   </UiProvider>
