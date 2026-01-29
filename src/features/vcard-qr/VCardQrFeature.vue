@@ -39,7 +39,7 @@ function safeImport(raw: string) {
     subtitle="Generate a QR code that encodes a vCard and download .vcf" />
 
   <n-grid
-    :cols="2"
+    :cols="1"
     :x-gap="12"
     :y-gap="12"
     responsive="screen"
