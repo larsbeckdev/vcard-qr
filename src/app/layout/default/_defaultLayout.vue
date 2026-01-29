@@ -34,7 +34,7 @@ import {
 
       <!-- Footer -->
       <n-layout-footer bordered class="layout-footer">
-        <div class="layout-footer-inner h-full flex align-center justify-center align-items-center">
+        <div class="layout-footer-inner flex justify-center items-center">
           <Footer />
         </div>
       </n-layout-footer>
