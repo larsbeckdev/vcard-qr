@@ -36,8 +36,8 @@ function safeImport(raw: string) {
 <template>
   <n-page-header
     title="vCard → QR"
-    subtitle="Generate a QR code that encodes a vCard and download .vcf" 
-    class="flex justify-center align-center h-12 text-center "/>
+    subtitle="Generate a QR code that encodes a vCard and download .vcf"
+    class="flex justify-center align-center h-12 text-center" />
 
   <n-grid
     :cols="1"
@@ -45,7 +45,6 @@ function safeImport(raw: string) {
     :y-gap="12"
     responsive="screen"
     style="margin-top: 12px">
-
     <!-- QR Preview -->
     <n-grid-item>
       <QrPreview
@@ -76,3 +75,9 @@ function safeImport(raw: string) {
     </n-grid-item>
   </n-grid>
 </template>
+
+<style>
+.n-page-header__main {
+  flex-direction: column;
+}
+</style>
