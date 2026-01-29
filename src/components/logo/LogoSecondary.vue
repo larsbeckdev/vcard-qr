@@ -5,6 +5,6 @@
     <img
       src="@/assets/png/vCard-QR.png"
       alt="vcard-qr logo"
-      class="select-none" />
+      class="select-none w-" />
   </a>
 </template>
