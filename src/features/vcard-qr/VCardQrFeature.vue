@@ -37,14 +37,14 @@ function safeImport(raw: string) {
   <n-page-header
     title="vCard → QR"
     subtitle="Generate a QR code that encodes a vCard and download .vcf"
-    class="flex justify-center align-center h-20 text-center" />
+    class="flex justify-center align-center h-12 text-center" />
 
   <n-grid
     :cols="1"
-    :x-gap="12"
-    :y-gap="12"
+    :x-gap="8"
+    :y-gap="8"
     responsive="screen"
-    style="margin-top: 12px">
+    style="margin-top: 8px">
     <!-- QR Preview -->
     <n-grid-item>
       <QrPreview

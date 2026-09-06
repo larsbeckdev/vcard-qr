@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* Compact Naive UI form items */
+.n-form-item {
+  --n-blank-height: 0px;
+  --n-feedback-height: 0px;
+}
+
+.n-form-item .n-form-item-blank {
+  min-height: 0;
+}

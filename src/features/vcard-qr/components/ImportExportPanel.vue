@@ -65,7 +65,7 @@ function clearTextarea() {
 </script>
 
 <template>
-  <n-card title="Import / Export" size="medium">
+  <n-card title="Import / Export" size="small">
     <n-space>
       <n-button @click="downloadExport">Download JSON</n-button>
       <n-button secondary @click="exportToTextarea">Export → Text</n-button>
@@ -75,15 +75,15 @@ function clearTextarea() {
       </n-button>
     </n-space>
 
-    <div style="margin-top: 12px">
+    <div style="margin-top: 8px">
       <n-input
         v-model:value="raw"
         type="textarea"
         placeholder="Paste JSON here or import a .json file below."
-        :autosize="{ minRows: 8, maxRows: 14 }" />
+        :autosize="{ minRows: 4, maxRows: 8 }" />
     </div>
 
-    <div style="margin-top: 16px">
+    <div style="margin-top: 8px">
       <n-upload
         ref="uploadRef"
         accept=".json,application/json"

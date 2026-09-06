@@ -31,7 +31,7 @@ const pngName = computed(() => {
 </script>
 
 <template>
-  <n-card title="QR Preview" size="medium">
+  <n-card title="QR Preview" size="small">
     <n-space justify="space-between" align="center">
       <n-space>
         <n-button @click="emit('regenerate')">Regenerate</n-button>
@@ -52,7 +52,7 @@ const pngName = computed(() => {
       <n-spin v-if="isGenerating" size="small" />
     </n-space>
 
-    <div style="margin-top: 12px">
+    <div style="margin-top: 8px">
       <n-alert v-if="error" type="error" :show-icon="false">
         {{ error }}
       </n-alert>
@@ -66,13 +66,13 @@ const pngName = computed(() => {
             :src="qrDataUrl"
             alt="vCard QR"
             :preview-disabled="true"
-            width="240" />
+            width="200" />
           <div v-else class="empty">No QR yet</div>
         </div>
       </n-card>
 
       <n-card size="small" title="vCard Text">
-        <n-scrollbar style="max-height: 360px">
+        <n-scrollbar style="max-height: 280px">
           <n-code :code="vcardText" language="text" />
         </n-scrollbar>
       </n-card>
@@ -82,13 +82,13 @@ const pngName = computed(() => {
 
 <style scoped>
 .preview {
-  margin-top: 12px;
+  margin-top: 8px;
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 12px;
+  grid-template-columns: 240px 1fr;
+  gap: 8px;
 }
 .qrBox {
-  min-height: 280px;
+  min-height: 220px;
   display: grid;
   place-items: center;
 }

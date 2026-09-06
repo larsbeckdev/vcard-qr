@@ -17,7 +17,7 @@ import {
   <UiProvider>
     <n-layout class="app-layout">
       <!-- HEADER BAR (full width) -->
-      <n-layout-header bordered class="layout-header">
+      <n-layout-header bordered class="layout-header min-h-14">
         <div class="container header-inner">
           <Header />
         </div>
@@ -44,8 +44,8 @@ import {
 
 <style scoped>
 .app-layout {
-  --header-h: 54px;
-  --footer-h: 48px;
+  --header-h: 44px;
+  --footer-h: 36px;
   --container-w: 980px;
 
   height: 100vh;
@@ -103,6 +103,6 @@ import {
 }
 
 .content-inner {
-  padding: 24px 16px;
+  padding: 12px 16px;
 }
 </style>
